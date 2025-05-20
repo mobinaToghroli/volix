@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
 }
 body{
     direction: rtl;
@@ -146,6 +147,7 @@ a{
 } */
 .section-top{
     padding: 3rem;
+  
     padding-right: 12rem;
     gap: 1rem;
     display: flex;
@@ -165,8 +167,9 @@ a{
 
 .section-all-top{
     margin-top: 5rem;
+    margin-bottom: 10rem;
     display: flex;
-    padding-right: 12rem;
+    padding-right: 8rem;
     gap: 1rem;
 } 
 .section-middle .section-all-top img{
@@ -174,6 +177,8 @@ a{
    width: 250px;
    height: 250px;
    -webkit-border-radius: 100%;
+   border: 3px solid #31a9cc;
+   box-shadow: 0 2px 8px 0;
    -moz-border-radius: 100%;
    -ms-border-radius: 100%;
    -o-border-radius: 100%;
@@ -201,9 +206,26 @@ text-align: center;
    align-items: center;
    justify-content: center;
   padding: 2rem ;
-  margin-top: 4rem;
-}
+ 
 
+  margin-top: 4rem;
+  gap: 0.5rem;
+}
+.section-all-buttom img{
+ box-shadow: 0 2px 8px 0;
+ border-radius: 8px;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ -ms-border-radius: 8px;
+ -o-border-radius: 8px;
+}
+.section-all-buttom :nth-child(1){
+    transform: translateY(-70px);
+    -webkit-transform: translateY(-70px);
+    -moz-transform: translateY(-70px);
+    -ms-transform: translateY(-70px);
+    -o-transform: translateY(-70px);
+}
 
 
 
@@ -225,6 +247,8 @@ text-align: center;
 } 
 .section-middle .section-mobile-top img{
    border-radius: 100%;
+   border: 2px solid #31a9cc;
+   box-shadow: 0 2px 8px 0;
    width: 250px;
    height: 250px;
    -webkit-border-radius: 100%;
