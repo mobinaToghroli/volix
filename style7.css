@@ -1004,3 +1004,106 @@ box-shadow: 0 8px 24px -1px #31a9cc;
     width: 100%;
   
 }
+
+
+
+.footer body{
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+    direction: rtl;
+    font-family: Tanha;
+
+}
+
+@font-face {
+    font-family: 'Tanha';
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/Tanha-FD.woff2);
+}
+
+
+
+
+footer {
+  background-color: #b3daf0;
+  color:#333;
+  padding: 30px 40px;
+  direction: rtl;
+  margin-top: auto;
+  height: 30vh;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* فاصله بیشتر برای ستون فضای مجازی */
+.footer-column:nth-child(4) {
+  margin-right: 40px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer-logo img {
+  width: 40px;
+}
+.footer-logo h2 {
+  font-size: 18px;
+  color:#333;
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-column ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-column ul li i {
+  font-size: 18px;
+}
+
+.footer-column ul li a {
+  color:#333;
+  text-decoration: none;
+}
+.footer-column ul li a:hover {
+  color: #00caff;
+}
+
+.social a {
+  font-size: 20x;
+  margin-left: 10px;
+  padding: 0.4rem;
+  cursor: pointer;
+  color: rgb(49, 97, 135);
+}
+.social a:hover {
+  color: #00caff;
+}
