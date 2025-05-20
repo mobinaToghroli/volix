@@ -4,18 +4,25 @@ html, body {
   display: flex;
   flex-direction: column;
 }
+body{
+    direction: rtl;
+    font-family: Tanha;
 
-
-
-
-body {
-  font-family: sans-serif;
-  background: #f0f0f0;
 }
 
+@font-face {
+    font-family: 'Tanha';
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/Tanha-FD.woff2);
+}
+
+
+
+
 footer {
-  background-color: #8da0ab;
-  color: white;
+  background-color: #b3daf0;
+  color:#333;
   padding: 30px 40px;
   direction: rtl;
   margin-top: auto;
@@ -49,7 +56,7 @@ footer {
 }
 .footer-logo h2 {
   font-size: 18px;
-  color: white;
+  color:#333;
 }
 
 .footer-column h3 {
@@ -74,18 +81,20 @@ footer {
 }
 
 .footer-column ul li a {
-  color: white;
+  color:#333;
   text-decoration: none;
 }
 .footer-column ul li a:hover {
   color: #00caff;
 }
 
-.social i {
-  font-size: 20px;
+.social a {
+  font-size: 20x;
   margin-left: 10px;
+  padding: 0.4rem;
   cursor: pointer;
+  color: rgb(49, 97, 135);
 }
-.social i:hover {
+.social a:hover {
   color: #00caff;
 }
