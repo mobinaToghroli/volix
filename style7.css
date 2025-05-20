@@ -7,6 +7,7 @@
 body{
     direction: rtl;
     font-family: Tanha;
+    color: #494949;
 }
 
 @font-face {
@@ -146,23 +147,35 @@ a{
      flex-direction: column;
 } */
 .section-top{
-    padding: 3rem;
-  
+    /*padding: 3rem;
+    */
+    margin-top: 8rem;
     padding-right: 12rem;
-    gap: 1rem;
+    padding-left: 16rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
    
+}
+.section-top-img  :nth-child(1){
+    transform: translateY(-70px);
+    -webkit-transform: translateY(-70px);
+    -moz-transform: translateY(-70px);
+    -ms-transform: translateY(-70px);
+    -o-transform: translateY(-70px);
+}
+
+.section-top-img  :nth-child(2){
+    transform: translateY(+30px);
+    -webkit-transform: translateY(+30px);
+    -moz-transform: translateY(+30px);
+    -ms-transform: translateY(+30px);
+    -o-transform: translateY(+30px);
 }
 .section-top-img img{
    border-radius: 22px;
+   padding: 0.1rem;
    
-   padding: 1rem;
-   -webkit-border-radius: 22px;
-   -moz-border-radius: 22px;
-   -ms-border-radius: 22px;
-   -o-border-radius: 22px;
 }
 
 .section-all-top{
@@ -734,6 +747,7 @@ box-shadow: 0 8px 24px -1px #31a9cc;
 } 
 .section-middle .section-labtop-top img{
    border-radius: 100%;
+   border: 2px solid #31a9cc;
    width: 250px;
    height: 250px;
    -webkit-border-radius: 100%;
@@ -766,7 +780,6 @@ text-align: center;
   padding: 2rem ;
   margin-top: 4rem;
 }
-/*  */
 
 
 
@@ -885,13 +898,23 @@ box-shadow: 0 8px 24px -1px #31a9cc;
 .section-buttom{
     flex-direction: column;
 }
+
 .section-buttom .blog{
     display: block;
     align-items: center;
     justify-content: center;
-
+   
      padding: 2rem 2rem; 
 }
+.section-buttom .blog p{
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+}
+.section-buttom .blog p:hover{
+    color: #248eaf;
+}
+
 .section-buttom .blog .blog-right{
     display: flex;
       align-items: center;
@@ -902,11 +925,15 @@ box-shadow: 0 8px 24px -1px #31a9cc;
 }
 .section-buttom .blog .blog-right a{
     display: flex;
-    border-radius: 12px;
-    border: 4px solid #fff;
+    border-radius: 15px;
+    border: 4px solid #dcdcdc;
     box-shadow:0 2px 8px 0 ;
     padding: 1rem;
     gap: 2rem;
+   
+}
+.section-buttom .blog .blog-right img{
+    border-radius: 15px;
     
 }
 .section-buttom .blog .blog-left img{
