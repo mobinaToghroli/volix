@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جزئیات محصول | فروشگاه لوازم جانبی موبایل</title>
+    <link rel="stylesheet" href="../css/product-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://v1.fontapi.ir/css/Vazir" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="MainPage.html">Volix</a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="MainPage.html">صفحه اصلی</a></li>
+                    <li><a href="Products_list.html">فروشگاه</a></li>
+                    <li><a href="userdashboard.html">حساب کاربری</a></li>
+                    <li><a href="contactUs.html">ارتباط با ما</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="جستجو در محصولات...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
+                </div>
+                <div class="user-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="MainPage.html">صفحه اصلی</a></li>
+                <li><a href="Products_list.html">فروشگاه</a></li>
+                <li><a href="#">لوازم جانبی موبایل</a></li>
+                <li class="active">کیف محافظ گوشی هوشمند</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Product Section -->
+            <section class="product-section">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="../images/airpad9.jpg" alt="کیف محافظ گوشی" id="mainImage">
+                        <div class="image-overlay">
+                            <button class="zoom-btn" onclick="openImageModal()">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="thumbnail-images">
+                        <div class="thumbnail active" onclick="changeMainImage('../images/airpad9.jpg', this)">
+                            <img src="../images/airpad9.jpg" alt="تصویر 1">
+                        </div>
+                        <div class="thumbnail" onclick="changeMainImage('../images/airpad7.jpg', this)">
+                            <img src="../images/airpad7.jpg" alt="تصویر 2">
+                        </div>
+                        <div class="thumbnail" onclick="changeMainImage('../images/airpad2.jpg', this)">
+                            <img src="../images/airpad2.jpg" alt="تصویر 3">
+                        </div>
+                        <div class="thumbnail" onclick="changeMainImage('../images/airpad10.jpg', this)">
+                            <img src="../images/airpad10.jpg" alt="تصویر 4">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <div class="product-header">
+                        <h1 class="product-title">کیف محافظ گوشی هوشمند</h1>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">(۴.۲ از ۵)</span>
+                            <span class="review-count">(۱۲۳ نظر)</span>
+                        </div>
+                    </div>
+
+                    <div class="product-price">
+                        <div class="current-price">۲۵۰,۰۰۰ تومان</div>
+                        <div class="original-price">۳۲۰,۰۰۰ تومان</div>
+                        <div class="discount-badge">۲۲٪ تخفیف</div>
+                    </div>
+
+                    <div class="product-description">
+                        <p>کیف محافظ با کیفیت بالا برای گوشی‌های هوشمند. این کیف با استفاده از مواد با کیفیت و طراحی مدرن، محافظت کامل از گوشی شما را تضمین می‌کند.</p>
+                    </div>
+
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label>رنگ:</label>
+                            <div class="color-options">
+                                <button class="color-option active" data-color="black" style="background-color: #000;"></button>
+                                <button class="color-option" data-color="blue" style="background-color: #007bff;"></button>
+                                <button class="color-option" data-color="red" style="background-color: #dc3545;"></button>
+                                <button class="color-option" data-color="green" style="background-color: #28a745;"></button>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>تعداد:</label>
+                            <div class="quantity-selector">
+                                <button class="qty-btn" onclick="decreaseQuantity()">-</button>
+                                <input type="number" value="1" min="1" max="10" id="quantity">
+                                <button class="qty-btn" onclick="increaseQuantity()">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="btn-primary" onclick="addToCart()">
+                            <i class="fas fa-shopping-cart"></i>
+                            افزودن به سبد خرید
+                        </button>
+                        <button class="btn-secondary" onclick="addToWishlist()">
+                            <i class="far fa-heart"></i>
+                            افزودن به علاقه‌مندی‌ها
+                        </button>
+                    </div>
+
+                    <div class="product-features">
+                        <div class="feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>ارسال رایگان برای سفارش‌های بالای ۵۰۰,۰۰۰ تومان</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-undo"></i>
+                            <span>بازگشت ۷ روزه بدون قید و شرط</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>ضمانت اصالت کالا</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Product Details Tabs -->
+            <section class="product-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" onclick="showTab('description')">توضیحات</button>
+                    <button class="tab-btn" onclick="showTab('specifications')">مشخصات</button>
+                    <button class="tab-btn" onclick="showTab('reviews')">نظرات</button>
+                    <button class="tab-btn" onclick="showTab('shipping')">ارسال و بازگشت</button>
+                </div>
+
+                <div class="tab-content">
+                    <!-- Description Tab -->
+                    <div id="description" class="tab-panel active">
+                        <h3>توضیحات کامل محصول</h3>
+                        <p>این کیف محافظ با طراحی مدرن و استفاده از مواد با کیفیت، محافظت کامل از گوشی هوشمند شما را تضمین می‌کند. ویژگی‌های کلیدی این محصول عبارتند از:</p>
+                        <ul>
+                            <li>محافظت کامل از گوشی در برابر ضربه و خراش</li>
+                            <li>طراحی نازک و سبک</li>
+                            <li>دسترسی آسان به تمام دکمه‌ها و پورت‌ها</li>
+                            <li>سازگاری با شارژ بی‌سیم</li>
+                            <li>مواد با کیفیت و مقاوم</li>
+                        </ul>
+                    </div>
+
+                    <!-- Specifications Tab -->
+                    <div id="specifications" class="tab-panel">
+                        <h3>مشخصات فنی</h3>
+                        <div class="specs-table">
+                            <div class="spec-row">
+                                <span class="spec-label">جنس:</span>
+                                <span class="spec-value">سیلیکون با کیفیت</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">رنگ‌های موجود:</span>
+                                <span class="spec-value">مشکی، آبی، قرمز، سبز</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">سازگاری:</span>
+                                <span class="spec-value">iPhone 12/13/14/15</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">ضخامت:</span>
+                                <span class="spec-value">۲ میلی‌متر</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">وزن:</span>
+                                <span class="spec-value">۱۵ گرم</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Tab -->
+                    <div id="reviews" class="tab-panel">
+                        <h3>نظرات مشتریان</h3>
+                        <div class="reviews-summary">
+                            <div class="overall-rating">
+                                <div class="rating-number">۴.۲</div>
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <div class="total-reviews">از ۱۲۳ نظر</div>
+                            </div>
+                        </div>
+
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-name">احمد محمدی</div>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-date">۲ روز پیش</div>
+                                </div>
+                                <div class="review-text">
+                                    کیفیت عالی و محافظت خوبی از گوشی ارائه می‌دهد. رنگ‌بندی زیبا و طراحی مدرن دارد.
+                                </div>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-name">فاطمه احمدی</div>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="review-date">۱ هفته پیش</div>
+                                </div>
+                                <div class="review-text">
+                                    محصول خوبی است اما کمی گران است. کیفیت مواد قابل قبول است.
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn-secondary" onclick="showAllReviews()">مشاهده همه نظرات</button>
+                    </div>
+
+                    <!-- Shipping Tab -->
+                    <div id="shipping" class="tab-panel">
+                        <h3>اطلاعات ارسال و بازگشت</h3>
+                        <div class="shipping-info">
+                            <div class="info-item">
+                                <h4>زمان ارسال:</h4>
+                                <p>ارسال در تهران: ۱-۲ روز کاری<br>ارسال به شهرستان: ۳-۵ روز کاری</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>هزینه ارسال:</h4>
+                                <p>رایگان برای سفارش‌های بالای ۵۰۰,۰۰۰ تومان<br>۳۵,۰۰۰ تومان برای سفارش‌های کمتر</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>بازگشت کالا:</h4>
+                                <p>امکان بازگشت تا ۷ روز پس از دریافت کالا<br>بازگشت رایگان در صورت نقص فنی</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Products -->
+            <section class="related-products">
+                <h2>محصولات مشابه</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="../images/airpad7.jpg" alt="محصول مشابه ۱">
+                        </div>
+                        <div class="product-details">
+                            <h3>کیف محافظ گوشی</h3>
+                            <div class="price">۱۸۰,۰۰۰ تومان</div>
+                            <button class="btn-primary">افزودن به سبد</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="../images/airpad2.jpg" alt="محصول مشابه ۲">
+                        </div>
+                        <div class="product-details">
+                            <h3>قاب محافظ شیشه‌ای</h3>
+                            <div class="price">۹۵,۰۰۰ تومان</div>
+                            <button class="btn-primary">افزودن به سبد</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="../images/airpad10.jpg" alt="محصول مشابه ۳">
+                        </div>
+                        <div class="product-details">
+                            <h3>کیف چرمی لوکس</h3>
+                            <div class="price">۴۲۰,۰۰۰ تومان</div>
+                            <button class="btn-primary">افزودن به سبد</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeImageModal()">&times;</span>
+            <img id="modalImage" src="" alt="تصویر بزرگ">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>درباره ما</h3>
+                    <p>فروشگاه لوازم جانبی موبایل با ارائه بهترین محصولات و خدمات</p>
+                </div>
+                <div class="footer-section">
+                    <h3>خدمات مشتریان</h3>
+                    <ul>
+                        <li><a href="#">راهنمای خرید</a></li>
+                        <li><a href="#">بازگشت کالا</a></li>
+                        <li><a href="#">گارانتی</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>تماس با ما</h3>
+                    <p>تلفن: ۰۲۱-۱۲۳۴۵۶۷۸</p>
+                    <p>ایمیل: info@volix.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../javascript/product-detail.js"></script>
+</body>
+</html> 
