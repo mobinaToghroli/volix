@@ -121,6 +121,7 @@ USE_TZ = True
 #for loading static files
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
+    BASE_DIR / "static",
     BASE_DIR / "assets",#direction of the project
     #"/var/www/static/",
 ]
