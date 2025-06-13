@@ -14,7 +14,7 @@ body{
     font-family: 'Tanha';
     font-style: normal;
     font-weight: normal;
-    src: url(fonts/Tanha-FD.woff2);
+    src: url(../../fonts/Tanha-FD.woff2);
 }
 .container{
     flex-direction: column;
@@ -1077,7 +1077,7 @@ box-shadow: 0 8px 24px -1px #31a9cc;
     font-family: 'Tanha';
     font-style: normal;
     font-weight: normal;
-    src: url(fonts/Tanha-FD.woff2);
+    src: url(../../fonts/Tanha-FD.woff2);
 }
 
 

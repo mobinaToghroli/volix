@@ -12,10 +12,11 @@ body{
 }
 
 @font-face {
-    font-family: 'Tanha';
+    font-family: 'Tanha-FD';
     font-style: normal;
     font-weight: normal;
-    src: url(fonts/Tanha-FD.woff2);
+
+    src: url("/statics/fonts/Tanha-FD.woff2") format("woff2");
 }
 
 header{
