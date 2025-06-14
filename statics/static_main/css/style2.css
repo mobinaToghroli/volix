@@ -8,15 +8,14 @@
 }
 body{
     direction: rtl;
-    font-family: T Verdana, serif;
+    font-family: Tanha;
 }
 
 @font-face {
-    font-family: 'Tanha-FD';
+    font-family: 'Tanha';
     font-style: normal;
     font-weight: normal;
-
-    src: url("/statics/fonts/Tanha-FD.woff2") format("woff2");
+    src: url(fonts/Tanha-FD.woff2);
 }
 
 header{
