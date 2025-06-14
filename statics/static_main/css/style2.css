@@ -6,16 +6,16 @@
     box-sizing: border-box;
     
 }
-body{
-    direction: rtl;
-    font-family: Tanha;
-}
-
 @font-face {
     font-family: 'Tanha';
     font-style: normal;
     font-weight: normal;
-    src: url(fonts/Tanha-FD.woff2);
+    src: url('fonts/Tanha-FD.woff2');
+}
+
+body {
+    direction: rtl;
+    font-family: 'Tanha', sans-serif;
 }
 
 header{
