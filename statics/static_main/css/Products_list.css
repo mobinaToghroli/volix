@@ -14,8 +14,425 @@ body{
     font-family: 'Tanha';
     font-style: normal;
     font-weight: normal;
-    src: url(fonts/Tanha-FD.woff2);
+    src: url(../fonts/Tanha-FD.woff2);
 }
+
+/* Search and Filter Bar Styles */
+.search-filter-container {
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px 0;
+    margin: 1rem 0;
+    padding: 1.5rem;
+    border: 5px solid #fff;
+}
+
+.search-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.search-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 25px;
+    padding: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    right: 1rem;
+    color: #666;
+    z-index: 1;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 0.8rem 3rem 0.8rem 1rem;
+    font-size: 1rem;
+    outline: none;
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.search-btn {
+    background: #5c48ee;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-right: 0.5rem;
+}
+
+.search-btn:hover {
+    background: #0f1e6a;
+}
+
+.filter-section {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 150px;
+}
+
+.filter-group label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.filter-select {
+    padding: 0.6rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    color: #333;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #5c48ee;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.clear-filters-btn, .advanced-filter-btn {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.clear-filters-btn {
+    background: #f8f9fa;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.clear-filters-btn:hover {
+    background: #e9ecef;
+    color: #333;
+}
+
+.advanced-filter-btn {
+    background: #5c48ee;
+    color: white;
+}
+
+.advanced-filter-btn:hover {
+    background: #0f1e6a;
+}
+
+/* Advanced Filters */
+.advanced-filters {
+    display: none;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.advanced-filters.active {
+    display: block;
+}
+
+.advanced-filters-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.advanced-filter-row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.advanced-filter-group {
+    flex: 1;
+    min-width: 250px;
+}
+
+.advanced-filter-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+}
+
+/* Color Options */
+.color-options {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.color-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.color-option input[type="checkbox"] {
+    display: none;
+}
+
+.color-swatch {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.color-option input[type="checkbox"]:checked + .color-swatch {
+    border-color: #5c48ee;
+    transform: scale(1.1);
+}
+
+/* Stock Options */
+.stock-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stock-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.stock-option input[type="checkbox"] {
+    margin: 0;
+}
+
+.stock-option i {
+    font-size: 1rem;
+}
+
+.stock-option input[value="in-stock"]:checked ~ i {
+    color: #28a745;
+}
+
+.stock-option input[value="out-of-stock"]:checked ~ i {
+    color: #dc3545;
+}
+
+/* Rating Options */
+.rating-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.rating-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.rating-option input[type="checkbox"] {
+    margin: 0;
+}
+
+.stars {
+    display: flex;
+    gap: 0.1rem;
+}
+
+.stars i {
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+
+/* Discount Options */
+.discount-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.discount-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.discount-option input[type="checkbox"] {
+    margin: 0;
+}
+
+.discount-badge {
+    background: #dc3545;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Search Results Summary */
+.search-results-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.results-count {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.active-filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.active-filter-tag {
+    background: #5c48ee;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.active-filter-tag .remove-filter {
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.active-filter-tag .remove-filter:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Design for Search and Filter */
+@media (max-width: 1024px) {
+    .search-filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-section {
+        min-width: auto;
+    }
+    
+    .filter-section {
+        justify-content: center;
+    }
+    
+    .filter-actions {
+        justify-content: center;
+    }
+    
+    .advanced-filter-row {
+        flex-direction: column;
+    }
+    
+    .advanced-filter-group {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-filter-container {
+        padding: 1rem;
+    }
+    
+    .filter-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-group {
+        min-width: auto;
+    }
+    
+    .filter-actions {
+        flex-direction: column;
+    }
+    
+    .search-results-summary {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .color-options {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-input-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .search-btn {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .advanced-filter-group {
+        min-width: 100%;
+    }
+}
+
 .container{
     flex-direction: column;
    align-items: center;
@@ -1077,7 +1494,7 @@ box-shadow: 0 8px 24px -1px #31a9cc;
     font-family: 'Tanha';
     font-style: normal;
     font-weight: normal;
-    src: url(fonts/Tanha-FD.woff2);
+    src: url(../fonts/Tanha-FD.woff2);
 }
 
 
