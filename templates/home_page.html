@@ -1,4 +1,4 @@
-
+{#{% extends 'base/base.html' %}#}
 {% load static %}
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
@@ -25,13 +25,13 @@
     </label>
      <ul class="list-nav-mobile">
 
-    <li> <a href="test4-contactUs.html">ارتباط باما</a></li>
+    <li> <a href="{% url 'contact' %}">ارتباط باما</a></li>
 
     <li><a href="#">حساب کاربری</a></li>
 
     <li><a href="test7.html">فروشگاه</a></li>
 
-    <li><a href="test2-MainPage.html">صفحه اصلی</a></li>
+    <li><a href="{% url 'home' %}">صفحه اصلی</a></li>
 
     <li>
         <a href="test3-Login.html" class="active">
@@ -56,7 +56,7 @@
 <div class="left-nav-link">
 
     <li>
-        <a href="test4-contactUs.html">ارتباط باما</a>
+        <a href="{% url 'contact' %}">ارتباط باما</a>
 
     </li>
 
@@ -69,7 +69,7 @@
     </li>
 
     <li>
-        <a href="test2-MainPage.html">صفحه اصلی</a>
+        <a href="{% url 'home' %}">صفحه اصلی</a>
     </li>
 
 </div>

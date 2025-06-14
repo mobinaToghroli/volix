@@ -1,7 +1,11 @@
+{% load render_partial %}
+
 {% load static %}
-{% include 'base/header.html' %}
+{% render_partial 'header' %}
+{#{% include 'base/header.html' %}#}
 {% block contents %}
 
 {% endblock %}
+{% render_partial 'footer' %}
 
-{% include 'base/footer.html' %}
+{#{% include 'base/footer.html' %}#}
