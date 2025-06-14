@@ -1,104 +1,15 @@
-{#{% extends 'base/base.html' %}#}
+{% extends 'base/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
+{% block contents %}
+    <head>
+        <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VOLIX</title>
     <link rel="stylesheet" href="{% static 'css/style2.css' %}">
-</head>
-<body>
 
-      <div class="circle-1"></div>
-<header>
-<div class="section-nav">
-
-<div class="right-nav">
-
- <div class="nav-mobile">
-    <input type="checkbox" id="toggle-nav" hidden>
-    <label for="toggle-nav" class="label-toggle-nav">
-        <span class="line line-top"> </span>
-        <span class="line line-mid"> </span>
-        <span class="line line-buttom"> </span>
-    </label>
-     <ul class="list-nav-mobile">
-
-    <li> <a href="{% url 'contact' %}">ارتباط باما</a></li>
-
-    <li><a href="#">حساب کاربری</a></li>
-
-    <li><a href="test7.html">فروشگاه</a></li>
-
-    <li><a href="{% url 'home' %}">صفحه اصلی</a></li>
-
-    <li>
-        <a href="test3-Login.html" class="active">
-            <span>ورود / ثبت نام</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
-             <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0z"/>
-             <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
-            </svg>
-        </a>
-    </li>
-
-
-</div>
-
- <div class="logo-nav">
-   <a href="#"> Volix</a>
-</div>
-</div>
-
-<div class="left-nav">
-
-<div class="left-nav-link">
-
-    <li>
-        <a href="{% url 'contact' %}">ارتباط باما</a>
-
-    </li>
-
-    <li>
-        <a href="#">حساب کاربری</a>
-    </li>
-
-    <li>
-        <a href="test7.html">فروشگاه</a>
-    </li>
-
-    <li>
-        <a href="{% url 'home' %}">صفحه اصلی</a>
-    </li>
-
-</div>
-     <div class="left-nav-shoppingcartANDlogin">
-      <div>
-          <li>
-        <a href="test3-Login.html" class="active">
-            <span>ورود / ثبت نام</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
-             <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0z"/>
-             <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
-            </svg>
-        </a>
-    </li>
-
-      </div>
-    <div class="icon">
-        <a href="">
-           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" color="black" class="bi bi-cart2" viewBox="0 0 16 16">
-  <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
-</svg>
-
-        </a>
-    </div>
-     </div>
-
-</div>
-</div>
- <div class="section-content-header">
+    </head>
+    <body>
+    <div class="section-content-header">
     <div class="left-content-header">
         <h1>
           <span>
@@ -126,7 +37,7 @@
         </form>
     </div>
     <div class="right-content-header">
-        <img src="{% static 'image/asmsung1.webp' %}" alt="" >
+        <img src="{% static 'image/asmsung1.webp' %}" alt="">
         <img src="{% static 'image/samsung2.avif' %}" alt="">
 
         <div class=" content-img-text">
@@ -140,16 +51,164 @@
                 </li>
             </ul>
         </div>
-
-
-
-
+    </div>
 </div>
+    </body>
 
-</header>
+{% endblock %}
 
-</body>
-</html>
+
+
+{#<!DOCTYPE html>#}
+{#<html lang="fa" dir="rtl">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <title>VOLIX</title>#}
+{#    <link rel="stylesheet" href="{% static 'css/style2.css' %}">#}
+{#</head>#}
+{#<body>#}
+{##}
+{#      <div class="circle-1"></div>#}
+{#<header>#}
+{#<div class="section-nav">#}
+{##}
+{#<div class="right-nav">#}
+{##}
+{# <div class="nav-mobile">#}
+{#    <input type="checkbox" id="toggle-nav" hidden>#}
+{#    <label for="toggle-nav" class="label-toggle-nav">#}
+{#        <span class="line line-top"> </span>#}
+{#        <span class="line line-mid"> </span>#}
+{#        <span class="line line-buttom"> </span>#}
+{#    </label>#}
+{#     <ul class="list-nav-mobile">#}
+{##}
+{#    <li> <a href="{% url 'contact' %}">ارتباط باما</a></li>#}
+{##}
+{#    <li><a href="#">حساب کاربری</a></li>#}
+{##}
+{#    <li><a href="test7.html">فروشگاه</a></li>#}
+{##}
+{#    <li><a href="{% url 'home' %}">صفحه اصلی</a></li>#}
+{##}
+{#    <li>#}
+{#        <a href="test3-Login.html" class="active">#}
+{#            <span>ورود / ثبت نام</span>#}
+{#            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">#}
+{#             <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0z"/>#}
+{#             <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>#}
+{#            </svg>#}
+{#        </a>#}
+{#    </li>#}
+{##}
+{##}
+{#</div>#}
+{##}
+{# <div class="logo-nav">#}
+{#   <a href="#"> Volix</a>#}
+{#</div>#}
+{#</div>#}
+{##}
+{#<div class="left-nav">#}
+{##}
+{#<div class="left-nav-link">#}
+{##}
+{#    <li>#}
+{#        <a href="{% url 'contact' %}">ارتباط باما</a>#}
+{##}
+{#    </li>#}
+{##}
+{#    <li>#}
+{#        <a href="#">حساب کاربری</a>#}
+{#    </li>#}
+{##}
+{#    <li>#}
+{#        <a href="test7.html">فروشگاه</a>#}
+{#    </li>#}
+{##}
+{#    <li>#}
+{#        <a href="{% url 'home' %}">صفحه اصلی</a>#}
+{#    </li>#}
+{##}
+{#</div>#}
+{#     <div class="left-nav-shoppingcartANDlogin">#}
+{#      <div>#}
+{#          <li>#}
+{#        <a href="test3-Login.html" class="active">#}
+{#            <span>ورود / ثبت نام</span>#}
+{#            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">#}
+{#             <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0z"/>#}
+{#             <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>#}
+{#            </svg>#}
+{#        </a>#}
+{#    </li>#}
+{##}
+{#      </div>#}
+{#    <div class="icon">#}
+{#        <a href="">#}
+{#           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" color="black" class="bi bi-cart2" viewBox="0 0 16 16">#}
+{#  <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>#}
+{#</svg>#}
+{##}
+{#        </a>#}
+{#    </div>#}
+{#     </div>#}
+{##}
+{#</div>#}
+{#</div>#}
+{# <div class="section-content-header">#}
+{#    <div class="left-content-header">#}
+{#        <h1>#}
+{#          <span>#}
+{#           خرید بهترین#}
+{#          </span>#}
+{#            <br>#}
+{#            <span> سیستم های هوشمند</span>#}
+{#            <br>#}
+{#            <span>در کرمان</span>#}
+{#        </h1>#}
+{#        <p>#}
+{##}
+{#           در دنیای تکنولوژی، انتخاب یک گوشی هوشمند یا لپ‌تاپ مناسب می‌تواند چالش‌برانگیز باشد.#}
+{#            ما در اینجا با بررسی تخصصی، مقایسه مدل‌ها و ارائه آخرین اخبار فناوری،#}
+{#            به شما کمک می‌کنیم تا بهترین انتخاب را داشته باشید.#}
+{#             همراه ما باشید و با دنیای دیجیتال به‌روز بمانید!#}
+{#     از معرفی جدیدترین مدل‌های گوشی و لپ‌تاپ گرفته تا بررسی تخصصی قابلیت‌های هر دستگاه، ما اطلاعات کاربردی و دقیق را در اختیار شما قرار می‌دهیم#}
+{##}
+{#        </p>#}
+{#        <form action="">#}
+{#            <input type="text" placeholder="دنبال چه چیزی میگردید؟">#}
+{#            <button>#}
+{#               جستجو محصولات#}
+{#            </button>#}
+{#        </form>#}
+{#    </div>#}
+{#    <div class="right-content-header">#}
+{#        <img src="{% static 'image/asmsung1.webp' %}" alt="" >#}
+{#        <img src="{% static 'image/samsung2.avif' %}" alt="">#}
+{##}
+{#        <div class=" content-img-text">#}
+{#            <ul>#}
+{#                <li>#}
+{#                   اول هر ماه 30% تخفیف بگیرید#}
+{##}
+{#                </li>#}
+{#                <li>#}
+{#                   با کیفیت ترین محصولات#}
+{#                </li>#}
+{#            </ul>#}
+{#        </div>#}
+{##}
+{##}
+{##}
+{##}
+{#</div>#}
+{##}
+{#</header>#}
+{##}
+{#</body>#}
+{#</html>#}
 
 
 
