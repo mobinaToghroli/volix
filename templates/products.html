@@ -1,0 +1,1086 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block contents %}
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="{% static 'css/style7.css' %}">
+    </head>
+
+    <body>
+    <div class="container">
+        <div class="header">
+
+        <div class="header-top">
+
+
+            <div class="header-top-right">
+              <h2>VOLIX</h2>
+              <form action="">
+                <input type="text" placeholder="جستجو محصول">
+                <button>جستجو محصول</button>
+              </form>
+            </div>
+
+
+            <div class="header-top-left">
+
+              <div>
+                 <a href="test3-Login.html" class="active">
+            <span>ورود / ثبت نام</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0z"></path>
+             <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708z"></path>
+            </svg>
+             </a>
+              </div>
+            <div class="icon">
+             <a href="">
+           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" color="black" class="bi bi-cart2" viewBox="0 0 16 16">
+             <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"></path>
+               </svg>
+
+           </a>
+           </div>
+            </div>
+        </div>
+        <div class="header-buttom">
+            <div>
+                <input type="checkbox" id="toggle-nav" hidden="">
+    <label for="toggle-nav" class="label-toggle-nav">
+        <span class="line line-top"> </span>
+        <span class="line line-mid"> </span>
+        <span class="line line-buttom"> </span>
+    </label>
+            </div>
+          <div>دسته بندی محصولات</div>
+        </div>
+        </div>
+        <div class="section">
+
+            <div class="section-top">
+                <div class="section-top-img">
+
+
+                 <img src="{% static 'image/first1.jpg' %}" alt="" width="300" height="400">
+
+                 <img src="{% static 'image/first7.jpg' %}" alt="" width="300" height="400">
+                </div>
+            </div>
+
+
+
+            <div class="section-middle">
+                <div class="section-all">
+                    <div class="section-all-top">
+
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/mobile1.jpg' %}">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                    گوشی موبایل
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/labtop2.jpg' %}">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                   لب تاپ
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/airpad2.jpg' %}">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                    هندزفری
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/watch2.jpg' %}">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                  ساعت هوشمند
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+
+
+
+
+                    </div>
+                    <div class="section-all-buttom">
+
+                        <div class="section-all-buttom-img">
+                            <img src="{% static 'image/section5.jpg' %}" alt="" width="250" height="400">
+                            <img src="{% static 'image/section6.jpg' %}" alt="" width="250" height="400">
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <!--  -->
+                <div class="section-mobile">
+
+
+
+
+
+                    <div class="section-mobile-top">
+
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/s 1.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                   گوشی سامسونگ
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/s 5.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                    گوشی شیايومی
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/s 3.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                    گوشی ایفون
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/s 6.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                    گوشی نوکیا
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+
+
+
+
+                    </div>
+                    <div class="section-mobile-buttom">
+
+                         <div class="title-first-cart">
+                                <h2>بهترین گوشی ها</h2>
+                            </div>
+                        <div class="section-mobile-buttom-img">
+
+
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/s25-2.jpg' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                         S25 Ultra
+                                        </h5>
+                                         <p class="text-cart">
+                                          گوشی موبایل سامسونگ مدل گلکسی S25 Ultra<br> ظرفیت 256 گیگابایت رم 12 گیگابایت - ویتنام
+                                            </p>
+                                        <div class="price-cart">
+                                          102,490,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/16pro-3.jpg' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                          16Pro Max
+                                        </h5>
+                                         <p class="text-cart">
+                                          گوشی موبایل اپل مدل Iphone 16 Pro Max<br> ظرفیت 256 گیگابایت رم 8 گیگابایت - ویتنام
+                                            </p>
+                                        <div class="price-cart">
+                                         142,300,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/xiaomi 15pr-4.jpg' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                         Xiaomi 15 pro
+                                        </h5>
+                                         <p class="text-cart">
+                                      گوشی موبایل شیائومی مدل Xiaomi 15 pro  <br> ظرفیت 256 گیگابایت رم 12 گیگابایت - ویتنام
+                                            </p>
+                                        <div class="price-cart">
+                                          72,000,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/nokia-4.jpg' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                         Nokia Magic Max 5G
+                                        </h5>
+                                         <p class="text-cart">
+                                          گوشی موبایل شیائومی مدل   Nokia Magic Max 5G <br> ظرفیت 256 گیگابایت رم 12 گیگابایت - <br>    ویتنام
+                                            </p>
+                                        <div class="price-cart">
+                                          22,453,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                </div>
+                <!--  -->
+
+            </div>
+            <!--  -->
+             <div class="section-airpad">
+
+
+                      <div class="section-airpad-top">
+
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/airpad3.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                  هندزفری اپل
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/airpad10.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                    هندزفری سامسونگ
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/airpad11.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                    هندزفری شیايومی
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/airpad9.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                    هندزفریQCY
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+
+
+
+
+                    </div>
+                    <div class="section-airpad-buttom">
+
+                         <div class="title-first-cart">
+                                <h2>بهترین هندزفری ها</h2>
+                            </div>
+                        <div class="section-airpad-buttom-img">
+
+
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/airpadpro-2.jpg' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                        Apple Airpods 4
+                                        </h5>
+                                         <p class="text-cart">
+                                          ایرپاد 4 اپل با قابلیت active noise cancellation<br> Airpods 4 with Active Noise Cancellation
+                                            </p>
+                                        <div class="price-cart">
+                                          13,500,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/buds3pro-1.jpg' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                         Galaxy Buds 3 pro
+                                        </h5>
+                                         <p class="text-cart">
+                                          هندزفری بلوتوثی سامسونگ مدل Galaxy Buds 3 pro<br> Samsung Galaxy Buds 3 pro Bluetooth Earbuds
+                                            </p>
+                                        <div class="price-cart">
+                                          8,619,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/flipbudspro-1.jpg' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                         Flip Buds pro TWSEJ20GT
+                                        </h5>
+                                         <p class="text-cart">
+                                          هندزفری شیائومی مدل  Flip Buds pro TWSEJ20GT<br> Xiaomi  Flip Buds pro TWSEJ20GT Bluetooth
+                                            </p>
+                                        <div class="price-cart">
+                                          9,899,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/t13anc2-1.jpg' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                         T13 ANC 2
+                                        </h5>
+                                         <p class="text-cart">
+                                          هندزفری بلوتوثی کیو سی وای مدل T13 ANC 2<br> QCY T13 ANC 2 Bluetooth Earphons
+                                            </p>
+                                        <div class="price-cart">
+                                          1,289,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+                </div>
+                </div>
+                </div>
+                <!--  -->
+                <div class="section-watch">
+
+
+
+                      <div class="section-watch-top">
+
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/watch4.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                 ساعت سامسونگ
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/watch6.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                   اپل واچ
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/watch7.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                    ساعت هایلو
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/watch9.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                   ساعت میبرو
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+
+
+
+
+                    </div>
+                    <div class="section-watch-buttom">
+
+                         <div class="title-first-cart">
+                                <h2>بهترین ساعت هوشمند ها</h2>
+                            </div>
+                        <div class="section-watch-buttom-img">
+
+
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/watch644mm-4.jpg' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                        Galaxy Watch6 44mm
+                                        </h5>
+                                         <p class="text-cart">
+                                          ساعت هوشمند سامسونگ مدل Galaxy Watch6 44mm<br>  Samsung Galaxy Watch6 44mm Smart Watch
+                                            </p>
+                                        <div class="price-cart">
+                                          12,290,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/watch49mmloop-1.jpg' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                         Ultra 49mm loop
+                                        </h5>
+                                         <p class="text-cart">
+                                          ساعت هوشمند اپل مدل Ultra 49mm loop <br> Iphone Watch  Ultra 49mm Alpine loop
+                                            </p>
+                                        <div class="price-cart">
+                                          49,900,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/solarpro-2.jpg' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                         Solar Pro
+                                        </h5>
+                                         <p class="text-cart">
+                                          ساعت هوشمند هایلو  مدل Solar Pro Alpine<br> Haylou Solar Pro Alpine Smart Watch
+                                            </p>
+                                        <div class="price-cart">
+                                         4,390,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/gspro-1.jpg' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                        GS Pro
+                                        </h5>
+                                         <p class="text-cart">
+                                          ساعت هوشمند میبرو مدل GS Pro Alpine<br> Mibro Watch GS Pro Alpine Smart Watch
+                                            </p>
+                                        <div class="price-cart">
+                                          6,500,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+                </div>
+                <!--  -->
+                <div class="section-labtop">
+
+
+
+
+                      <div class="section-labtop-top">
+
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/l1.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                لبتاپ مک بوک
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/l2.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                   لبتاپ سرفیس
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/l4.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                    لبتاپ لنوو
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+ <div class="grid-product">
+        <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/l5.jpg' %}" width="250" height="250">
+             </div>
+             <div class="caption-item-product">
+                <h5 class="title-product">
+                  لبتاپ ایسوس
+                </h5>
+
+             </div>
+            </div>
+        </a>
+
+            </div>
+
+
+
+
+                    </div>
+                    <div class="section-labtop-buttom">
+
+                         <div class="title-first-cart">
+                                <h2>بهترین لبتاپ ها</h2>
+                            </div>
+                        <div class="section-labtop-buttom-img">
+
+
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/macbook-1.webp' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                        MacBook Air MW123 M4
+                                        </h5>
+                                         <p class="text-cart">
+                                          لبتاپ اپل 13.6 اینچی مدل MacBook Air MW123 M4 <br>  MacBook Air MW123 M4 2025 16GB RAM 256GB SSD
+                                            </p>
+                                        <div class="price-cart">
+                                          80,5000,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/surfacestudio-2.webp' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                         Surface Studio-i7
+                                        </h5>
+                                         <p class="text-cart">
+                                          لبتاپ 14.4 اینچی مایکروسافت  Surface Studio-(i7-32GB-1TB)<br> Microsoft Surface Laptop Studio(i7-32GB-1TB)
+                                            </p>
+                                        <div class="price-cart">
+                                          88,700,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/lenovo-1.webp' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                         Legion Pro 5 2024
+                                        </h5>
+                                         <p class="text-cart">
+                                          لبتاپ لنوو Legion Pro 5 2024-BB 14650HX i7 64GB 1TB SSD<br> Lenovo Legion Pro 5 2024-BB 14650HX i7 64GB 1TB SSD
+                                            </p>
+                                        <div class="price-cart">
+                                          63,319,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+                         <div class="grid-cart">
+
+                             <a href="#">
+                                 <div class="item-grid-cart">
+                                  <div class="img-cart">
+                                     <img src="{% static 'image/asus-1.webp' %}" alt="" width="250" height="250">
+                                   </div>
+                                   <div class="caption-item-cart">
+                                    <h5 class="title-cart">
+                                        ROG Strix G18 G814JI
+                                        </h5>
+                                         <p class="text-cart">
+                                        لبتاپ ایسوس ROG Strix G18 G814JI-C 13650HX i7 16GB 2TB SSD<br>ASUS ROG Strix G18 G814JI-C 13650HX i7 16GB 2TB SSD
+                                            </p>
+                                        <div class="price-cart">
+                                         76,129,000تومان
+                                            </div>
+                                            <button class="add-too-cart"> اضافه کردن به سبد خرید</button>
+                                      </div>
+                                         </div>
+                                         </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+                </div>
+
+                </div>
+
+            </div>
+
+
+            <!--  -->
+            <div class="section-buttom">
+                <div class="section-buttom-blog"><h3>مجله ولیکس</h3>
+
+                <div class="blog">
+                     <div class="blog-right">
+
+                  <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/b3.jpg' %}" alt="" width="290" height="360">
+             </div>
+                <p class="text-product">
+                گلکسی S25 اج؛پرچم‌دار فوق‌ باریک سامسونگ
+                </p>
+             </div>
+
+        </a>
+
+
+
+                  <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/b5.jpg' %}" alt="" width="290" height="360">
+             </div>
+                <p class="text-product">
+                بهترین لپ تاپ های بازار ایران
+                </p>
+             </div>
+
+        </a>
+               </div>
+
+                <div class="blog-left">
+
+
+
+                  <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/b8.jpg' %}" alt="" width="290" height="360">
+             </div>
+                <p class="text-product">
+               بهترین ایرباد و هندزفری بلوتوثی در بازار ایران
+                </p>
+             </div>
+
+        </a>
+
+
+
+                  <a href="#">
+            <div class="item-grid-product">
+             <div class="img-product">
+                <img src="{% static 'image/b9.jpg' %}" alt="" width="290" height="360">
+             </div>
+                <p class="text-product">
+                بهترین مچ بند و ساعت هوشمند بازار ایران
+                </p>
+             </div>
+
+        </a>
+
+                </div>
+                </div></div>
+                <div class="section-buttom-advice">
+                   <div class="advice-1">
+                    <div class="advice-title">
+                        <h3>خرید گوشی</h3>
+                    </div>
+                   <div class="advice-caption">
+                    <p>برای داشتن تجربه خوب از خرید گوشی موبایل، فرقی ندارد از خرید گوشی ساده تا خرید گوشی هوشمند باید چند نکته را در نظر بگیرید.
+                         اول اینکه فروشگاه اینترنتی موبایل باید حتما دارای نماد اعتماد الکترونیک باشد،
+                         سایت خرید گوشی مورد نظرتان را از نظر خوشنامی و سابقه کار بررسی کنید که در دام فروش گوشی های کارکرده و یا گوشی های رجیستر نشده نیفتید.
+                         فروش گوشی موبایل ارزان قیمت یکی از تله هاییست که ممکن است در زمان خرید گوشی به صورت آنلاین به دام آن بیفتید.
+                          بهترین راه این است که قیمت روز گوشی موبایل را در مدل دلخواهتان در چندین فروشگاه موبایل سرچ و بررسی کنید.
+                           با توجه به شرایط واردات و قوانین خرید و فروش گوشی برای فروشگاه های اینترنتی و حتی فیزیکی قیمت گوشی های موبایل نمیتواند بازه خیلی متفاوتی داشته باشد.
+                            بنابراین احتیاط کنید در دام گوشی های آیفون 20 میلیون تومانی نیفتید. در حال حاضر سایت های محدودی هستند که معتبرهستند و گوشی موبایل خریداری شده تان را در زمان درست و قیمت درست به شما تحویل می دهند.</p>
+                   </div>
+                   </div>
+                   <div class="advice-2">
+                    <div class="advice-title">
+                        <h3>خرید گوشی سامسونگ</h3>
+                    </div>
+                   <div class="advice-caption">
+                    <p>بی شک قهرمان اول در لیگ برندهای تولید کننده موبایل و برندهای برتر موجود در ایران سامسونگ است. برتری گوشی های سامسونگ به سایر برندها این است که در رنج قیمتی های متنوع گوشی موبایل به بازار جهانی روانه کرده است. از گوشی های اقتصادی و  میانرده سامسونگ، تا پرچمداران هوشمند سامسونگ مانند گوشی s24 اولترا مدل های متنوعی در بازار خرید گوشی ایران هم موجود است. قیمت گوشی سامسونگ در بسیاری از مدل ها سمت و سوی مشتریان را به طرف برند سامسونگ تغییر میدهد. ما در ولیکس تلاش کرده ایم تنوع کالایی مناسبی را در این برند ایجاد کنیم.
+
+</p>
+                   </div>
+                   </div>
+                   <div class="advice-3">
+                    <div class="advice-title">
+                        <h3>خرید گوشی شیائومی</h3>
+                    </div>
+                   <div class="advice-caption">
+                    <p>چه چیزی برند شیائومی را در بازار جهانی موفق کرد؟ قطعا ورود طوفانی و تنوع کالایی و قیمتی بسیار مناسب گوشی شیائومی و بله کم کم محصولات شیائومی تمام دنیا را تسخیر کرد. از گوشی موبایل تا هندزفری شیائومی و ساعت هوشمند شیائومی تا خودرو و لوازم خانگی&nbsp; را در سبد این برند می‌بینید. خرید گوشی شیائومی را در فروشگاه اینترنتی موبایل ولیکس در تنوع بالا و قیمت مناسب از گوشی های اقتصادی تا گوشی های پرچمدار شیائومی ادامه بدهید.</p>
+                   </div>
+                   </div>
+                   <div class="advice-4">
+                    <div class="advice-title">
+                        <h3>خرید گوشی اپل آیفون</h3>
+                    </div>
+                   <div class="advice-caption">
+                    <p>با وجود عدم رجیستری گوشی آیفون از ورژن آیفون 14 به بعد، همچنان طرفداران گوشی اپل در ایران هم بیشتر از پیش شده اند.
+                      خرید گوشی آیفون در تمام کانفیگ ها در آیفون 13 ساده و ... همچنان در وب سایت ولیکس در دسترسی کاربران قرار دارد و می توانید با بهترین قیمت گوشی آیفون را تهیه کنید.
+                       با وجود عرضه‌ی غیر رسمی گوشی های اپل در بازار ایران، این گوشی‌ها همچنان فروش بالایی را تجربه می‌کنند که این مسئله گواهی است بر ارزش خرید بسیار بالای آن‌ها.
+                        برای خرید گوشی اپل لازم است به فروشگاه های معتبر مراجعه کنید و یکی از انواع گوشی های آیفون اکتیو یا نات اکتیو را انتخاب کنید. شاید در نگاه اول قیمت گوشی اپل کمی بالا به‌نظر برسد،
+                        اما اگر  کیفیت ساخت، پشتیبانی و برخی قابلیت‌های انحصاری این گوشی‌ها را در نظر بگیریم، ارزش خرید این محصولات آشکار می‌شود.</p>
+                   </div>
+                   </div>
+                   <div class="advice-5">
+                    <div class="advice-title">
+                        <h3>راهنمای خرید گوشی</h3>
+                    </div>
+                   <div class="advice-caption">
+                    <p>ما در تلاشیم که اطلاعات لازم شما را در زمینه خرید گوشی تلفن همراه در تمام بازه هی قیمتی و مدل ها و برندها در اختیار شما قرار بدهیم، مشاوره خرید گوشی در ولیکس علاوه بر راهنمایی خرید گوشی با توجه به نیاز شما بهترین مدل ها را به شما معرفی خواهد کرد. همچنین ما در وبلاگ ولیکس تلاش می کنیم با ارائه اطلاعات مفید در زمینه نقد و بررسی گوشی ها و تمام لوازم دیجیتال پرطرفدار شما را در خریدی لذت بخش کمک کنیم.
+
+</p>
+                   </div>
+                   </div>
+                   <div class="advice-6">
+                    <div class="advice-title">
+                        <h3>تضمین اصالت کالا</h3>
+                    </div>
+                   <div class="advice-caption">
+                    <p>به‌جز محصولات برندهای سامسونگ، اپل ، گوشی‌های شرکت‌های مطرح دیگر مانند نوکیاو شیائومی  هم در ولیکس عرضه می‌شوند. وجه اشتراک همه‌ی این محصولات، اصالت آن‌هاست. ما به‌واسطه‌ی تامین کالاها از منابع مطمئن و شناخته‌شده، این اطمینان را به شما می‌دهیم که تمامی محصولاتی که از ولیکس خریداری می‌کنید اصیل و اورجینال هستند. این موضوع محدود به گوشی‌های هوشمند نمی‌شود و  دیگر کالاهای عرضه شده در فروشگاه اینترنتی ولیکس این ویژگی هستند.</p>
+                   </div>
+                   </div>
+                   <div class="advice-7">
+                    <div class="advice-title">
+                        <h3>فروشگاه اینترنتی ولیکس</h3>
+                    </div>
+                   <div class="advice-caption">
+                    <p>سایت ولیکس یکی از فروشگاه های اینترنتی جدید در زمینه خرید گوشی و لوازم دیجیتال است که بیش از 1 ماه است در حوزه خرید آنلاین لوازم اصل و اورجینال فعالیت می کند. تنوع بالای کالاها در دسته بندی های گوشی موبایل، لپ تاپ، هدفون و ساعت هوشمند و همچنین اعتماد کاربر در خرید از سایت  ، از دلایل رضایتمندی کاربران این سایت است.</p>
+                   </div>
+                   </div>
+
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </body>
+{% endblock %}
