@@ -19,7 +19,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from VolixTest import settings
-from VolixTest.views import home_page , header , footer , contact_us_page , products_page
+from VolixTest.views import home_page , header , footer , contact_us_page , products_page , login_page , register_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,7 +27,11 @@ urlpatterns = [
     path('header', header , name='header'),
     path('footer', footer , name='footer'),
     path('contact-us', contact_us_page , name='contact'),
+    path('login-page', login_page , name='login'),
     path('products', products_page , name='products'),
+
+    path('login/', login_page, name='login'),
+    path('register/', register_page, name='register'),
 
 
 ]

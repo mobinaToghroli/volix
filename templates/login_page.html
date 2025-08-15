@@ -1,16 +1,13 @@
 {% extends 'base/base.html' %}
 {% load static %}
 {% block contents %}
-    <head>
 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VOLIX</title>
     <link rel="stylesheet" href="{% static 'css/style3.css' %}">
-
-    </head>
-
-    <body>
+</head>
     <div class="login-page">
  <div class="login-img">
             <img src="{% static 'image/login.jpg' %}" alt="" width="250" height="250">
@@ -19,17 +16,26 @@
         <form action="">
         <h1>خوش آمدید</h1>
 
-            <div class="form-group">
-                <label for=""> نام کاربری</label>
-                <input type="text">
-            </div>
-            <div class="form-group">
-                <label for="">رمز عبور</label>
-                <input type="password">
-            </div>
-            <div class="button-form">
+{#            <div class="form-group">#}
+{#                <label for=""> نام کاربری</label>#}
+{#                <input type="text">#}
+{#            </div>#}
+{#            <div class="form-group">#}
+{#                <label for="">رمز عبور</label>#}
+{#                <input type="password">#}
+{#            </div>#}
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ login_form }}
+
+                <div class="button-form">
                 <button>ورود</button>
-            </div>
+                </div>
+
+            </form>
+{#            <div class="button-form">#}
+{#                <button>ورود</button>#}
+{#            </div>#}
             <div class="bottom-form">
                 <a href="#">
                    حساب کاربری جدید بسازید
@@ -38,6 +44,6 @@
         </form>
 
     </div>
-    </body>
 
 {% endblock %}
+
