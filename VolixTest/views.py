@@ -1,6 +1,7 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login , get_user_model ,logout
 from django.shortcuts import render, redirect
-from .forms import loginForm
+from .forms import loginForm , registerForm
+from django.contrib.auth import login as auth_login
 #partial render fb
 def header(request):
     context = {}
@@ -31,7 +32,7 @@ def login_page(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/')
+            return redirect('home')
         else:
             print('Login failed')
 
@@ -48,18 +49,27 @@ def products_page(request):
     return render(request, 'products.html', context)
 
 
-from .forms import registerForm
-from django.contrib.auth import login as auth_login
 
 
+
+User = get_user_model()
 def register_page(request):
-    form = registerForm(request.POST or None)
-    if form.is_valid():
-        user = form.save(commit=False)
-        password = form.cleaned_data.get('password')
-        user.set_password(password)
-        user.save()
-        auth_login(request, user)
-        return redirect('/')
+    register_form = registerForm(request.POST or None)
+    if register_form.is_valid():
+        userName = register_form.cleaned_data.get('username')
+        email = register_form.cleaned_data.get('email')
+        password = register_form.cleaned_data.get('password')
 
-    return render(request, 'register_page.html', {'form': form})
+        new_user = User.objects.create_user(username=userName, email=email, password=password)
+        print(new_user)
+        return redirect('home')
+
+
+    context = {
+        'register_form': register_form,
+    }
+    return render(request, 'register.html', context)
+
+def log_out(request):
+    logout(request)
+    return redirect('/login')

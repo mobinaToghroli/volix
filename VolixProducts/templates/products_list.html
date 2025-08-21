@@ -1,0 +1,453 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block contents %}
+<body>
+   <div class="row products-category">
+
+       {% for product in object_list %}
+
+               <div class="section">
+        <div class="section-top">
+            <div class="section-top-img">
+                <img src="{{ product.image.url }}" alt="{{ product.title }}" title="{{ product.title }}" width="300" height="400">
+                <img src="{% static 'image/first7.jpg' %}" alt="" width="300" height="400">
+            </div>
+        </div>
+
+        <div class="section-middle">
+            <div class="section-all">
+                <div class="section-all-top">
+                    <!-- This section will be converted to product grid format -->
+                </div>
+                <div class="section-all-buttom">
+                    <div class="section-all-buttom-img">
+                        <img src="{% static 'image/section5.jpg' %}" alt="" width="250" height="400">
+                        <img src="{% static 'image/section6.jpg' %}" alt="" width="250" height="400">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Products Section -->
+            <div class="products-category">
+                <div class="title-first-cart">
+                    <h2>بهترین گوشی ها</h2>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/s25-2.jpg' %}" alt="S25 Ultra" title="S25 Ultra" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">S25 Ultra</a></h4>
+                                <p class="description">گوشی موبایل سامسونگ مدل گلکسی S25 Ultra ظرفیت 256 گیگابایت رم 12 گیگابایت - ویتنام</p>
+                                <p class="price"> <span class="price-new">102,490,000 تومان</span> <span class="price-tax">بدون مالیات: 98,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/16pro-3.jpg' %}" alt="16Pro Max" title="16Pro Max" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">16Pro Max</a></h4>
+                                <p class="description">گوشی موبایل اپل مدل Iphone 16 Pro Max ظرفیت 256 گیگابایت رم 8 گیگابایت - ویتنام</p>
+                                <p class="price"> <span class="price-new">142,300,000 تومان</span> <span class="price-tax">بدون مالیات: 138,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/xiaomi 15pr-4.jpg' %}" alt="Xiaomi 15 pro" title="Xiaomi 15 pro" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">Xiaomi 15 pro</a></h4>
+                                <p class="description">گوشی موبایل شیائومی مدل Xiaomi 15 pro ظرفیت 256 گیگابایت رم 12 گیگابایت - ویتنام</p>
+                                <p class="price"> <span class="price-new">72,000,000 تومان</span> <span class="price-old">78,000,000 تومان</span> <span class="saving">-8%</span> <span class="price-tax">بدون مالیات: 68,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/nokia-4.jpg' %}" alt="Nokia Magic Max 5G" title="Nokia Magic Max 5G" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">Nokia Magic Max 5G</a></h4>
+                                <p class="description">گوشی موبایل شیائومی مدل Nokia Magic Max 5G ظرفیت 256 گیگابایت رم 12 گیگابایت - ویتنام</p>
+                                <p class="price"> <span class="price-new">22,453,000 تومان</span> <span class="price-old">25,000,000 تومان</span> <span class="saving">-10%</span> <span class="price-tax">بدون مالیات: 20,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/s 1.jpg' %}" alt="گوشی سامسونگ" title="گوشی سامسونگ" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">گوشی سامسونگ</a></h4>
+                                <p class="description">گوشی های سامسونگ با آخرین تکنولوژی روز دنیا و طراحی منحصر به فرد</p>
+                                <p class="price"> <span class="price-new">15,000,000 تومان</span> <span class="price-old">17,000,000 تومان</span> <span class="saving">-12%</span> <span class="price-tax">بدون مالیات: 14,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="clearfix visible-lg-block visible-sm-block"></span>
+            </div>
+
+            <!-- AirPods Products Section -->
+            <div class="products-category">
+                <div class="title-first-cart">
+                    <h2>بهترین هندزفری ها</h2>
+                </div>
+
+
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/buds3pro-1.jpg' %}" alt="Galaxy Buds 3 pro" title="Galaxy Buds 3 pro" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">Galaxy Buds 3 pro</a></h4>
+                                <p class="description">هندزفری بلوتوثی سامسونگ مدل Galaxy Buds 3 pro - Samsung Galaxy Buds 3 pro Bluetooth Earbuds</p>
+                                <p class="price"> <span class="price-new">8,619,000 تومان</span> <span class="price-tax">بدون مالیات: 8,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/flipbudspro-1.jpg' %}" alt="Flip Buds pro TWSEJ20GT" title="Flip Buds pro TWSEJ20GT" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">Flip Buds pro TWSEJ20GT</a></h4>
+                                <p class="description">هندزفری شیائومی مدل Flip Buds pro TWSEJ20GT - Xiaomi Flip Buds pro TWSEJ20GT Bluetooth</p>
+                                <p class="price"> <span class="price-new">9,899,000 تومان</span> <span class="price-old">11,000,000 تومان</span> <span class="saving">-10%</span> <span class="price-tax">بدون مالیات: 9,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/t13anc2-1.jpg' %}" alt="T13 ANC 2" title="T13 ANC 2" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">T13 ANC 2</a></h4>
+                                <p class="description">هندزفری بلوتوثی کیو سی وای مدل T13 ANC 2 - QCY T13 ANC 2 Bluetooth Earphons</p>
+                                <p class="price"> <span class="price-new">1,289,000 تومان</span> <span class="price-old">1,500,000 تومان</span> <span class="saving">-14%</span> <span class="price-tax">بدون مالیات: 1,100,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/airpad3.jpg' %}" alt="هندزفری اپل" title="هندزفری اپل" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">هندزفری اپل</a></h4>
+                                <p class="description">هندزفری های اپل با کیفیت صدای بی نظیر و طراحی ارگونومیک برای استفاده طولانی مدت</p>
+                                <p class="price"> <span class="price-new">12,000,000 تومان</span> <span class="price-tax">بدون مالیات: 11,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="clearfix visible-lg-block visible-sm-block"></span>
+            </div>
+
+            <!-- Watch Products Section -->
+            <div class="products-category">
+                <div class="title-first-cart">
+                    <h2>بهترین ساعت هوشمند ها</h2>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/watch644mm-4.jpg' %}" alt="Galaxy Watch6 44mm" title="Galaxy Watch6 44mm" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">Galaxy Watch6 44mm</a></h4>
+                                <p class="description">ساعت هوشمند سامسونگ مدل Galaxy Watch6 44mm - Samsung Galaxy Watch6 44mm Smart Watch</p>
+                                <p class="price"> <span class="price-new">12,290,000 تومان</span> <span class="price-old">14,000,000 تومان</span> <span class="saving">-12%</span> <span class="price-tax">بدون مالیات: 11,500,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/watch49mmloop-1.jpg' %}" alt="Ultra 49mm loop" title="Ultra 49mm loop" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">Ultra 49mm loop</a></h4>
+                                <p class="description">ساعت هوشمند اپل مدل Ultra 49mm loop - Iphone Watch Ultra 49mm Alpine loop</p>
+                                <p class="price"> <span class="price-new">49,900,000 تومان</span> <span class="price-tax">بدون مالیات: 47,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/solarpro-2.jpg' %}" alt="Solar Pro" title="Solar Pro" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">Solar Pro</a></h4>
+                                <p class="description">ساعت هوشمند هایلو مدل Solar Pro Alpine - Haylou Solar Pro Alpine Smart Watch</p>
+                                <p class="price"> <span class="price-new">4,390,000 تومان</span> <span class="price-old">5,000,000 تومان</span> <span class="saving">-12%</span> <span class="price-tax">بدون مالیات: 4,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/gspro-1.jpg' %}" alt="GS Pro" title="GS Pro" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">GS Pro</a></h4>
+                                <p class="description">ساعت هوشمند میبرو مدل GS Pro Alpine - Mibro Watch GS Pro Alpine Smart Watch</p>
+                                <p class="price"> <span class="price-new">6,500,000 تومان</span> <span class="price-old">7,200,000 تومان</span> <span class="saving">-10%</span> <span class="price-tax">بدون مالیات: 6,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/watch4.jpg' %}" alt="ساعت سامسونگ" title="ساعت سامسونگ" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">ساعت سامسونگ</a></h4>
+                                <p class="description">ساعت های هوشمند سامسونگ با طراحی شیک و امکانات فراوان برای زندگی روزمره و ورزش</p>
+                                <p class="price"> <span class="price-new">11,000,000 تومان</span> <span class="price-tax">بدون مالیات: 10,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="clearfix visible-lg-block visible-sm-block"></span>
+            </div>
+
+            <!-- Laptop Products Section -->
+            <div class="products-category">
+                <div class="title-first-cart">
+                    <h2>بهترین لبتاپ ها</h2>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/macbook-1.webp' %}" alt="MacBook Air MW123 M4" title="MacBook Air MW123 M4" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">MacBook Air MW123 M4</a></h4>
+                                <p class="description">لبتاپ اپل 13.6 اینچی مدل MacBook Air MW123 M4 - MacBook Air MW123 M4 2025 16GB RAM 256GB SSD</p>
+                                <p class="price"> <span class="price-new">80,500,000 تومان</span> <span class="price-old">85,000,000 تومان</span> <span class="saving">-5%</span> <span class="price-tax">بدون مالیات: 76,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/surfacestudio-2.webp' %}" alt="Surface Studio-i7" title="Surface Studio-i7" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">Surface Studio-i7</a></h4>
+                                <p class="description">لبتاپ 14.4 اینچی مایکروسافت Surface Studio-(i7-32GB-1TB) - Microsoft Surface Laptop Studio(i7-32GB-1TB)</p>
+                                <p class="price"> <span class="price-new">88,700,000 تومان</span> <span class="price-tax">بدون مالیات: 84,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/lenovo-1.webp' %}" alt="Legion Pro 5 2024" title="Legion Pro 5 2024" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">Legion Pro 5 2024</a></h4>
+                                <p class="description">لبتاپ لنوو Legion Pro 5 2024-BB 14650HX i7 64GB 1TB SSD - Lenovo Legion Pro 5 2024-BB 14650HX i7 64GB 1TB SSD</p>
+                                <p class="price"> <span class="price-new">63,319,000 تومان</span> <span class="price-old">68,000,000 تومان</span> <span class="saving">-7%</span> <span class="price-tax">بدون مالیات: 60,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/asus-1.webp' %}" alt="ROG Strix G18 G814JI" title="ROG Strix G18 G814JI" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">ROG Strix G18 G814JI</a></h4>
+                                <p class="description">لبتاپ ایسوس ROG Strix G18 G814JI-C 13650HX i7 16GB 2TB SSD - ASUS ROG Strix G18 G814JI-C 13650HX i7 16GB 2TB SSD</p>
+                                <p class="price"> <span class="price-new">76,129,000 تومان</span> <span class="price-old">80,000,000 تومان</span> <span class="saving">-5%</span> <span class="price-tax">بدون مالیات: 72,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-layout product-grid col-lg-5ths col-md-5ths col-sm-3 col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image"><a href="product.html"><img src="{% static 'image/l1.jpg' %}" alt="لبتاپ مک بوک" title="لبتاپ مک بوک" class="img-responsive"></a></div>
+                        <div>
+                            <div class="caption">
+                                <h4><a href="product.html">لبتاپ مک بوک</a></h4>
+                                <p class="description">لپ تاپ های مک بوک اپل با طراحی زیبا، عملکرد فوق العاده و عمر باتری طولانی برای کارهای روزمره و خلاقانه</p>
+                                <p class="price"> <span class="price-new">75,000,000 تومان</span> <span class="price-tax">بدون مالیات: 71,000,000 تومان</span> </p>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary" type="button" onclick=""><span>افزودن به سبد</span></button>
+                                <div class="add-to-links">
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="افزودن به علاقه مندی ها"><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                    <button type="button" data-toggle="tooltip" title="" onclick="" data-original-title="مقایسه این محصول"><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="clearfix visible-lg-block visible-sm-block"></span>
+            </div>
+        </div>
+    </div>
+
+       {% endfor %}
+   </div>
+
+
+
+</body>
+{% endblock %}

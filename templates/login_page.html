@@ -1,3 +1,42 @@
+{#{% extends 'base/base.html' %}#}
+{#{% load static %}#}
+{#{% block contents %}#}
+{##}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#    <title>VOLIX</title>#}
+{#    <link rel="stylesheet" href="{% static 'css/style3.css' %}">#}
+{#</head>#}
+{#    <div class="login-page">#}
+{# <div class="login-img">#}
+{#            <img src="{% static 'image/login.jpg' %}" alt="" width="250" height="250">#}
+{#        </div>#}
+{##}
+{#        <form action="">#}
+{#        <h1>خوش آمدید</h1>#}
+{##}
+{#            <form action="" method="post">#}
+{#                {% csrf_token %}#}
+{#                {{ login_form }}#}
+{##}
+{#                <div class="button-form">#}
+{#                <button>ورود</button>#}
+{#                </div>#}
+{##}
+{#            </form>#}
+{##}
+{#            <div class="bottom-form">#}
+{#                <a href="#">#}
+{#                   حساب کاربری جدید بسازید#}
+{#                </a>#}
+{#            </div>#}
+{#        </form>#}
+{##}
+{#    </div>#}
+{##}
+{#{% endblock %}#}
+
 {% extends 'base/base.html' %}
 {% load static %}
 {% block contents %}
@@ -8,42 +47,28 @@
     <title>VOLIX</title>
     <link rel="stylesheet" href="{% static 'css/style3.css' %}">
 </head>
-    <div class="login-page">
- <div class="login-img">
-            <img src="{% static 'image/login.jpg' %}" alt="" width="250" height="250">
-        </div>
+<div class="login-page">
+    <div class="login-img">
+        <img src="{% static 'image/login.jpg' %}" alt="" width="250" height="250">
+    </div>
 
-        <form action="">
+    <form method="post">  <!-- ✅ Correct method="post" -->
+        {% csrf_token %}
         <h1>خوش آمدید</h1>
 
-{#            <div class="form-group">#}
-{#                <label for=""> نام کاربری</label>#}
-{#                <input type="text">#}
-{#            </div>#}
-{#            <div class="form-group">#}
-{#                <label for="">رمز عبور</label>#}
-{#                <input type="password">#}
-{#            </div>#}
-            <form action="" method="post">
-                {% csrf_token %}
-                {{ login_form }}
+        {{ login_form }}
 
-                <div class="button-form">
-                <button>ورود</button>
-                </div>
+        <div class="button-form">
+            <button type="submit">ورود</button>  <!-- ✅ type="submit" -->
+        </div>
 
-            </form>
-{#            <div class="button-form">#}
-{#                <button>ورود</button>#}
-{#            </div>#}
-            <div class="bottom-form">
-                <a href="#">
-                   حساب کاربری جدید بسازید
-                </a>
-            </div>
-        </form>
-
-    </div>
+        <div class="bottom-form">
+            <a href="{% url 'register' %}">
+                حساب کاربری جدید بسازید
+            </a>
+        </div>
+    </form>
+</div>
 
 {% endblock %}
 
