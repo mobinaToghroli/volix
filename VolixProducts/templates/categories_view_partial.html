@@ -1,0 +1,280 @@
+{% load static%}
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        /* استایل سایدبار */
+        /* استایل سایدبار */
+        #column-left {
+            width: 280px;
+            flex-shrink: 0;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            height: fit-content;
+        }
+
+
+
+        .subtitle {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 25px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            position: relative;
+        }
+
+        .subtitle:first-child {
+            margin-top: 0;
+        }
+
+        .subtitle::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 60px;
+            height: 2px;
+            background-color: #e74c3c;
+        }
+
+        /* استایل دسته‌بندی‌ها */
+        .box-category ul {
+            list-style: none;
+        }
+
+        .box-category ul li {
+            border-bottom: 1px solid #f1f1f1;
+            position: relative;
+        }
+
+        .box-category ul li:last-child {
+            border-bottom: none;
+        }
+
+        .cutom-parent {
+            display: block;
+            padding: 12px 15px;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .cutom-parent:hover {
+            background-color: #f8f9fa;
+            color: #3498db;
+            padding-right: 20px;
+        }
+
+        .cutom-parent .dcjq-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+        }
+
+        .cutom-parent-li.active .dcjq-icon {
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+        .box-category ul ul {
+            padding-right: 20px;
+            display: none;
+        }
+
+        .box-category ul ul li a {
+            display: block;
+            padding: 10px 15px;
+            color: #5a6b7c;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .box-category ul ul li:last-child a {
+            border-bottom: none;
+        }
+
+        .box-category ul ul li a:hover {
+            color: #3498db;
+            background-color: #f8f9fa;
+            padding-right: 20px;
+        }
+
+        /* استایل محصولات */
+        .side-item {
+            margin-bottom: 25px;
+        }
+
+        .product-thumb {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f1f1f1;
+            align-items: center;
+        }
+
+        .product-thumb:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .product-thumb .image {
+            width: 60px;
+            height: 60px;
+            margin-left: 15px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #f1f1f1;
+        }
+
+        .product-thumb .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-thumb .caption {
+            flex-grow: 1;
+        }
+
+        .product-thumb .caption h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .product-thumb .caption h4 a {
+            color: #2c3e50;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .product-thumb .caption h4 a:hover {
+            color: #3498db;
+        }
+
+        .product-thumb .caption .price {
+            font-size: 14px;
+            color: #e74c3c;
+            font-weight: 700;
+        }
+
+        .product-thumb .caption .price-old {
+            text-decoration: line-through;
+            color: #95a5a6;
+            margin-left: 8px;
+            font-size: 13px;
+        }
+
+        .product-thumb .caption .saving {
+            font-size: 12px;
+            color: #27ae60;
+            margin-right: 5px;
+        }
+
+        .product-thumb .rating {
+            color: #f39c12;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        /* استایل بنر */
+        .banner {
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .banner:hover {
+            transform: translateY(-3px);
+        }
+
+        .banner img {
+            width: 100%;
+            display: block;
+        }
+
+        /* محتوای اصلی */
+        .content {
+            flex-grow: 1;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+        }
+
+        .content h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f1f1f1;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+            color: #5a6b7c;
+            line-height: 1.8;
+        }
+
+        /* ریسپانسیو */
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+            }
+
+            #column-left {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="{% url 'productss:products_list' %}">
+            <h3 class="subtitle">دسته‌ها</h3>
+    </a>
+<div class="box-category">
+    <ul id="cat_accordion">
+    {% for category in categories %}
+        <li><a href="/productss/{{ category.name }}">{{ category.title }}</a></li>
+    {% endfor %}
+    </ul>
+</div>
+
+
+
+
+</body>
+

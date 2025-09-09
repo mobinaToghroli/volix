@@ -1,0 +1,22 @@
+<div class="product-item">
+                <div class="product-thumb">
+                    <div class="image">
+                        <a href="{{ product.get_product_detail_url }}">
+                            <img src="{{ product.image.url }}" alt="{{ product.title }}" title="{{ product.title }}" class="img-responsive">
+                        </a>
+                    </div>
+                    <div class="product-details">
+                        <div class="caption">
+                            <h4><a href="{{ product.get_product_detail_url }} ">{{ product.title }}</a></h4>
+                            <p class="description">{{ product.description }}</p>
+                            <p class="price"> <span class="price-new">{{ product.price }}  تومان </span>  </p>
+                        </div>
+                        <div class="button-group">
+                            <a href="{{ product.get_product_detail_url }}">
+                            <button class="btn-primary" type="button" onclick=""><span>مشاهده محصول</span></button>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>

@@ -1,0 +1,621 @@
+{% extends 'base/base.html' %}
+{% load render_partial %}
+{% load static %}
+
+{% block contents %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جزئیات محصول - ولیکس</title>
+    <link rel="stylesheet" href="{% static 'css/style7.css' %}">
+    <style>
+        /* Product Detail Styles */
+        .product-detail-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            direction: rtl;
+        }
+
+        .breadcrumb {
+            background-color: #e9ecef;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumb a {
+            color: #3b5d50;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .breadcrumb span {
+            color: #6c757d;
+        }
+
+        .product-detail-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-gallery {
+            position: relative;
+        }
+
+        .main-product-image {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 1rem;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .product-thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .thumbnail:hover, .thumbnail.active {
+            border-color: #31a9cc;
+        }
+
+        .product-info {
+            padding: 1rem;
+        }
+
+        .product-title {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 10px;
+        }
+
+        .stars {
+            color: #ffc107;
+        }
+
+        .rating-count {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            color: #3b5d50;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .product-specs {
+            margin-bottom: 2rem;
+        }
+
+        .specs-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .specs-list {
+            list-style: none;
+        }
+
+        .specs-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+        }
+
+        .specs-list li strong {
+            min-width: 120px;
+            color: #555;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .quantity-btn {
+            background: #f8f9fa;
+            border: none;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .quantity-input {
+            width: 50px;
+            height: 40px;
+            border: none;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .add-to-cart-btn {
+            background: #31a9cc;
+            color: white;
+            border: none;
+            padding: 0 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-family: 'Tanha';
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .add-to-cart-btn:hover {
+            background: #248eaf;
+        }
+
+        .wishlist-btn {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .wishlist-btn:hover {
+            color: #e74c3c;
+            border-color: #e74c3c;
+        }
+
+        .product-meta {
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .meta-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .meta-item strong {
+            min-width: 100px;
+            color: #555;
+        }
+
+        /* Tabs Section */
+        .product-tabs {
+            margin-top: 3rem;
+        }
+
+        .tabs-header {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 2rem;
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            color: #666;
+            position: relative;
+        }
+
+        .tab-btn.active {
+            color: #31a9cc;
+            font-weight: bold;
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #31a9cc;
+        }
+
+        .tab-content {
+            padding: 1rem;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        /* Reviews */
+        .review-item {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .review-author {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .review-date {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .review-content {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Related Products */
+        .related-products {
+            margin-top: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            font-weight: bold;
+            padding-right: 1rem;
+            border-right: 4px solid #31a9cc;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .related-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .related-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .related-img {
+            height: 180px;
+            object-fit: contain;
+            padding: 1rem;
+        }
+
+        .related-title {
+            font-size: 1rem;
+            padding: 0.5rem;
+            color: #333;
+        }
+
+        .related-price {
+            color: #3b5d50;
+            font-weight: bold;
+            padding-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .product-detail-content {
+                grid-template-columns: 1fr;
+            }
+
+            .related-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-actions {
+                flex-direction: column;
+            }
+
+            .quantity-selector {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .add-to-cart-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .related-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tabs-header {
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-title {
+                font-size: 1.5rem;
+            }
+
+            .product-price {
+                font-size: 1.5rem;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="product-detail-container">
+        <div class="breadcrumb">
+            <a href="#">خانه</a> /
+            <a href="#">محصولات</a> /
+            <a href="#">گوشی موبایل</a> /
+            <span>{{ product.title }}</span>
+        </div>
+
+        <div class="product-detail-content">
+            <div class="product-gallery">
+                <img id="main-image" src="{{product.image.url}}" alt="گوشی سامسونگ S25 اولترا" class="main-product-image">
+{#                <div class="product-thumbnails">#}
+{#                    <img src="{% static 'image/s25-2.jpg' %}" alt="Thumbnail 1" class="thumbnail active" onclick="changeImage(this)">#}
+{#                    <img src="{% static 'image/s25-3.jpg' %}" alt="Thumbnail 2" class="thumbnail" onclick="changeImage(this)">#}
+{#                    <img src="{% static 'image/s25-4.jpg' %}" alt="Thumbnail 3" class="thumbnail" onclick="changeImage(this)">#}
+{#                    <img src="{% static 'image/s25-5.jpg' %}" alt="Thumbnail 4" class="thumbnail" onclick="changeImage(this)">#}
+{#                </div>#}
+            </div>
+
+            <div class="product-info">
+                <h1 class="product-title">{{ product.title }}</h1>
+
+                <div class="product-rating">
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+                    <span class="rating-count">(۱۲ نظر)</span>
+                </div>
+
+                <div class="product-price"> {{ product.price  }}تومان</div>
+
+                <p class="product-description">
+                    {{ product.description }}
+                </p>
+
+                <div class="product-specs">
+                    <h3 class="specs-title">مشخصات فنی</h3>
+                    <ul class="specs-list">
+                        <li><strong>برند:</strong> سامسونگ</li>
+                        <li><strong>مدل:</strong> Galaxy S25 Ultra</li>
+                        <li><strong>حافظه داخلی:</strong> 256 گیگابایت</li>
+                        <li><strong>حافظه RAM:</strong> 12 گیگابایت</li>
+                        <li><strong>اندازه نمایشگر:</strong> 6.8 اینچ</li>
+                        <li><strong>رزولوشن عکس:</strong> 200 مگاپیکسل</li>
+                        <li><strong>سیستم عامل:</strong> Android 15</li>
+                        <li><strong>ظرفیت باتری:</strong> 5000 میلی آمپر</li>
+                    </ul>
+                </div>
+
+                <div class="cart">
+                    <form action="add_new_order" method="post">
+                        {% csrf_token %}
+                      <div class="qty">
+                        {{ new_order_form.product_id }}
+                        <label class="control_labl" for="input_quantity">تعداد</label>
+                          {{ new_order_form.count }}
+                        <a  class="qtyBtn plus"   href="javascript:void(0);">+</a>
+                        <a  class="qtyBtn minus"   href="javascript:void(0);">-</a>
+                        <div class="clear"></div>
+                      </div>
+
+                    <button type="submit" class="add-to-cart-btn">
+                        <i class="fa fa-shopping-cart"></i>
+                        افزودن به سبد خرید
+                    </button>
+
+                    </form>
+                </div>
+
+
+
+              <div class="product-actions">
+                <div class="product-meta">
+                    <div class="meta-item">
+                        <strong>دسته بندی:</strong> گوشی موبایل
+                    </div>
+                    <div class="meta-item">
+                        <strong>موجودی:</strong> موجود در انبار
+                    </div>
+                    <div class="meta-item">
+                        <strong>کد محصول:</strong> SM-S925UZKE
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-tabs">
+            <div class="tabs-header">
+                <button class="tab-btn active" onclick="openTab('description')">توضیحات محصول</button>
+                <button class="tab-btn" onclick="openTab('specs')">مشخصات کامل</button>
+                <button class="tab-btn" onclick="openTab('reviews')">نظرات (۱۲)</button>
+                <button class="tab-btn" onclick="openTab('guarantee')">گارانتی و возвраت</button>
+            </div>
+
+            <div class="tab-content">
+                <div id="description" class="tab-pane active">
+                       <p>{{ product.description }}</p>
+                </div>
+
+                <div id="specs" class="tab-pane">
+                    <h3>مشخصات کامل گوشی سامسونگ گلکسی S25 اولترا</h3>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>ابعاد</strong></td>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;">163.4 × 78.1 × 8.9 میلیمتر</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>وزن</strong></td>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;">233 گرم</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>نمایشگر</strong></td>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;">6.8 اینچ، Dynamic AMOLED 2X، رزولوشن 1440×3088</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>پردازنده</strong></td>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;">Snapdragon 8 Gen 4</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>حافظه داخلی</strong></td>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;">256 گیگابایت</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>حافظه RAM</strong></td>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;">12 گیگابایت</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>دوربین اصلی</strong></td>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;">200 مگاپیکسل (wide) + 48MP (periscope telephoto) + 12MP (ultrawide) + 10MP (telephoto)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>دوربین سلفی</strong></td>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;">12 مگاپیکسل</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>باتری</strong></td>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;">5000 میلی آمپر ساعت</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;"><strong>سیستم عامل</strong></td>
+                            <td style="padding: 10px; border-bottom: 1px solid #eee;">Android 15 با One UI 7</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="reviews" class="tab-pane">
+                    <h3>نظرات کاربران</h3>
+
+                    <div class="review-item">
+                        <div class="review-header">
+                            <span class="review-author">محمد رضایی</span>
+                            <span class="review-date">۱۴۰۳/۰۵/۱۲</span>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                        <div class="review-content">
+                            <p>من این گوشی رو دو هفته است که استفاده میکنم و واقعاً راضیم. باتری فوق العاده داره و دوربینش واقعاً خیره کننده است. پیشنهاد میکنم حتما بخرید.</p>
+                        </div>
+                    </div>
+
+                    <div class="review-item">
+                        <div class="review-header">
+                            <span class="review-author">فاطمه محمدی</span>
+                            <span class="review-date">۱۴۰۳/۰۵/۰۸</span>
+                        </div>
+                        <div class="stars">★★★★☆</div>
+                        <div class="review-content">
+                            <p>طراحی خیلی زیبایی داره و عملکردش عالیه. فقط وزنش یه کم زیاد هست که به مرور زمان بهش عادت میکنید. به طور کلی محصول بسیار خوبیه.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="guarantee" class="tab-pane">
+                    <h3>گارانتی و شرایط بازگشت</h3>
+                    <p>این محصول دارای ۱۸ ماه گارانتی رسمی سامسونگ ایران می باشد. گارانتی این محصول شامل تمامی نقص‌های ساختاری و manufacturing defects می‌باشد.</p>
+
+                    <h4>شرایط بازگشت کالا:</h4>
+                    <ul>
+                        <li>مهلت ۷ روزه برای بازگشت کالا</li>
+                        <li>کالا باید در شرایط اولیه و بدون کوچکترین خراش یا آسیب باشد</li>
+                        <li>تمام اقلام داخل جعبه باید return شوند</li>
+                        <li>هزینه ارسال برگشتی به عهده مشتری می باشد</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="related-products">
+            <h2 class="section-title">محصولات مشابه</h2>
+            <div class="related-grid">
+                {% for product in related_products %}
+                <div class="related-item">
+                    <img src="{{ product.image.url }}" alt="{{ product.title }}" title="{{ product.title }}" class="related-img">
+                    <h4><a href="{{ product.get_product_detail_url }}">{{ product.title }}</a></h4>
+                    <div class="related-price">{{ product.price }} تومان</div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+                 {% render_partial 'products_categories_partial' %}
+
+
+</body>
+
+{% endblock %}

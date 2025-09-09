@@ -1,0 +1,286 @@
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            direction: rtl;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header-buttom {
+            background-color: #3b5d50;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-buttom div:last-child {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Hamburger menu styles */
+        #toggle-nav {
+            display: none;
+        }
+
+        .label-toggle-nav {
+            display: flex;
+            flex-direction: column;
+            width: 30px;
+            cursor: pointer;
+        }
+
+        .label-toggle-nav .line {
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 5px;
+        }
+
+        .line-top {
+            width: 100%;
+        }
+
+        .line-mid {
+            width: 80%;
+        }
+
+        .line-buttom {
+            width: 60%;
+        }
+
+        /* Section styles */
+        .section {
+            padding: 0 15px;
+        }
+
+        .section-top {
+            margin-bottom: 30px;
+        }
+
+        .section-top-img {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .section-top-img img {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .section-top-img img:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Product grid styles */
+        .products-category {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+
+        .product-layout {
+            padding: 0 10px;
+            margin-bottom: 20px;
+        }
+
+        .product-thumb {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-thumb:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-thumb .image {
+            overflow: hidden;
+        }
+
+        .product-thumb .image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s;
+        }
+
+        .product-thumb:hover .image img {
+            transform: scale(1.05);
+        }
+
+        .product-thumb .caption {
+            padding: 15px;
+            flex-grow: 1;
+        }
+
+        .product-thumb h4 {
+            margin-bottom: 10px;
+            font-size: 16px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .product-thumb h4 a {
+            color: #3b5d50;
+            text-decoration: none;
+        }
+
+        .product-thumb h4 a:hover {
+            color: #2b463c;
+        }
+
+        .product-thumb .description {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 15px;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        .product-thumb .price {
+            margin-bottom: 15px;
+        }
+
+        .price-new {
+            font-weight: bold;
+            color: #3b5d50;
+            font-size: 16px;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: #999;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+
+        .saving {
+            color: #e74c3c;
+            font-size: 13px;
+        }
+
+        .price-tax {
+            display: block;
+            color: #666;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .button-group {
+            display: flex;
+            padding: 0 15px 15px;
+            margin-top: auto;
+        }
+
+        .btn-primary {
+            background: #3b5d50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            flex-grow: 1;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #2b463c;
+        }
+
+        .add-to-links {
+            display: flex;
+            margin-right: 10px;
+        }
+
+        .add-to-links button {
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            padding: 0 5px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .add-to-links button:hover {
+            color: #3b5d50;
+        }
+
+        .rating {
+            margin: 10px 0;
+            color: #f39c12;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        /* Section titles */
+        .title-first-cart {
+            text-align: center;
+            margin: 30px 0;
+            padding: 10px;
+            background: #3b5d50;
+            color: white;
+            border-radius: 8px;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 1200px) {
+            .col-lg-5ths {
+                width: 20%;
+                float: right;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .col-md-5ths {
+                width: 20%;
+                float: right;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .col-sm-3 {
+                width: 25%;
+                float: right;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .col-xs-12 {
+                width: 100%;
+                float: right;
+            }
+
+            .section-top-img img {
+                width: 100%;
+                max-width: 400px;
+                height: auto;
+                margin-bottom: 15px;
+            }
+        }
+
+        .visible-lg-block, .visible-sm-block {
+            display: block;
+        }

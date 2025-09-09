@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
 {% load static %}
+
 {% block contents %}
     <head>
     <meta charset="UTF-8">
@@ -24,20 +25,49 @@
                     جهت برقراری ارتباط با پشتیبانی های ولیکس می توانید با اطلاعات تماس مربوط به هر شعبه تماس حاصل کرده و ما را از نظرات خود بهره مند سازید.
                     و در صورت تمایل پیام خود را بگذارید
                 </p>
-               <form action="">
-                <div class="input-box">
-                     <input type="text" placeholder="نام خود را وارد کنید">
-                </div>
-                <div class="input-box">
-                     <input type="email" placeholder="ایمیل خود را وارد کنید">
-                </div>
-                <div class="input-box">
+                <br>
+        <div>
+               <form  method="post">
+               {% csrf_token %}
+                   <div>
+                           <label for="input-name">{{ contact_form.fullname.label  }}</label>
+                           <div class="input-box">
+                             {{ contact_form.fullname}}
+                           </div>
+                   </div>
 
-                     <textarea name="" id="" cols="30" rows="10" placeholder="پیام خود را وارد کنید"></textarea>
-                </div>
+                   {% for error in contact_form.fullname.errors %}
+                       <div class="text-danger">{{ error }}</div>
+                   {% endfor %}
+
+                  <div>
+                           <label for="input-name">{{ contact_form.email.label  }}</label>
+                           <div class="input-box">
+                             {{ contact_form.email}}
+                           </div>
+                   </div>
+
+                   {% for error in contact_form.email.errors %}
+                       <div class="text-danger">{{ error }}</div>
+                   {% endfor %}
+
+                  <div>
+                           <label for="input-name">{{ contact_form.message.label  }}</label>
+                           <div class="input-box">
+                             {{ contact_form.message}}
+                           </div>
+                   </div>
+
+                   {% for error in contact_form.message.errors %}
+                       <div class="text-danger">{{ error }}</div>
+                   {% endfor %}
+
+
                <button type="submit" class="btn-form"> ارسال کن</button>
 
                </form>
+
+        </div>
         </div>
 
          <div class="left-contactUs">

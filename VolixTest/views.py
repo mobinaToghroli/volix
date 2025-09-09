@@ -16,9 +16,7 @@ def home_page(request):
 
     return render(request,'home_page.html',context)
 
-def contact_us_page(request):
-    context = {}
-    return render(request,'contact_us.html',context)
+
 
 #AUTH section
 def login_page(request):

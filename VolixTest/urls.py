@@ -17,9 +17,11 @@ Including another URLconf
 
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from VolixTest import settings
-from VolixTest.views import home_page , header , footer , contact_us_page , products_page , login_page , register_page ,log_out
+from VolixTest.views import home_page , header , footer , products_page , login_page , register_page ,log_out
+from VolixProducts.views import ProductsList, products_categories_partial
+from VolixContact.views import contact_us_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,7 +34,9 @@ urlpatterns = [
     path('login/', login_page, name='login'),
     path('register', register_page, name='register'),
     path('logout', log_out, name='logout'),
-
+    path('', include('VolixProducts.urls' , namespace='productss') , ),
+    path('', include('VolixOrder.urls' , namespace='order') , ),
+    path('products_categoris_partial', products_categories_partial, name='products_categories_partial'),
 
 
 ]
