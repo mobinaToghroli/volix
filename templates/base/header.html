@@ -29,17 +29,17 @@
 
     <li> <a href="{% url 'contact' %}">ارتباط باما</a></li>
 
-    <li><a href="#">حساب کاربری</a></li>
+    <li><a href="/profile">حساب کاربری</a></li>
 
-    <li><a href="{% url 'products' %}">فروشگاه</a></li>
+    <li><a href="{% url 'productss:products_list' %}">فروشگاه</a></li>
 
     <li><a href="{% url 'home' %}">صفحه اصلی</a></li>
 
+
+
     <li>
 
-    <l1>
-        <a href="{% url 'productss:products_list' %}">فروشگاه دو</a>
-    </l1>
+
 
         <a href="{% url 'login' %}" class="active">
             <span>ورود / ثبت نام</span>
@@ -68,19 +68,19 @@
     </li>
 
     <li>
-        <a href="#">حساب کاربری</a>
+        <a href="/profile">حساب کاربری</a>
     </li>
 
     <li>
-        <a href="{% url 'products' %}">فروشگاه</a>
+    <li><a href="{% url 'productss:products_list' %}">فروشگاه</a></li>
     </li>
 
     <li>
         <a href="{% url  'home' %}">صفحه اصلی</a>
     </li>
-    
-    <l1>
-        <a href="{% url 'productss:products_list' %}">فروشگاه دو</a>
+
+
+{#        <a href="{% url 'productss:products_list' %}">فروشگاه دو</a>#}
     </l1>
 
 </div>

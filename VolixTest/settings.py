@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'VolixProductsCategory',
     'VolixContact',
     'VolixOrder',
+    'VolixProfile',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,381 @@
+{% extends 'base/base.html' %}
+{% load render_partial %}
+
+{% block contents %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حساب کاربری - VOLIX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* استایل‌های پایه */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fb;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* هدر حساب کاربری */
+        .account-header {
+            background: linear-gradient(135deg, #2c5aa0, #3a6cc8);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20px;
+            font-size: 40px;
+            color: #2c5aa0;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .user-info {
+            flex-grow: 1;
+        }
+
+        .user-name {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .user-email {
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .user-status {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* بخش‌های اصلی */
+        .account-content {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 25px;
+        }
+
+        /* منو */
+        .account-menu {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .menu-item {
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #f1f1f1;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .menu-item:hover {
+            background: #f8f9fa;
+            color: #2c5aa0;
+        }
+
+        .menu-item.active {
+            background: #e8f0fe;
+            color: #2c5aa0;
+            border-right: 4px solid #2c5aa0;
+        }
+
+        .menu-item i {
+            margin-left: 12px;
+            font-size: 18px;
+        }
+
+        /* محتوای حساب کاربری */
+        .account-details {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+        }
+
+        .section-title {
+            color: #2c5aa0;
+            font-size: 22px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f1f1f1;
+        }
+
+        /* اطلاعات شخصی */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+        }
+
+        .info-label {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        /* آمار کاربر */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-icon {
+            font-size: 30px;
+            color: #2c5aa0;
+            margin-bottom: 15px;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c5aa0;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        /* فعالیت‌های اخیر */
+        .activity-list {
+            margin-top: 30px;
+        }
+
+        .activity-item {
+            display: flex;
+            padding: 15px;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .activity-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #e8f0fe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+            color: #2c5aa0;
+            font-size: 20px;
+        }
+
+        .activity-details {
+            flex-grow: 1;
+        }
+
+        .activity-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .activity-date {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .activity-status {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .status-delivered {
+            background: #e0f7ea;
+            color: #28a745;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        /* دکمه‌ها */
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: #2c5aa0;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1e3a73;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #dee2e6;
+            color: #6c757d;
+        }
+
+        .btn-outline:hover {
+            background: #f8f9fa;
+        }
+
+        /* رسپانسیو */
+        @media (max-width: 992px) {
+            .account-content {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .account-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .user-avatar {
+                margin-left: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .account-header {
+                padding: 20px;
+            }
+
+            .user-avatar {
+                width: 80px;
+                height: 80px;
+                font-size: 30px;
+            }
+
+            .user-name {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="account-header">
+            <div class="user-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+
+        </div>
+        <!-- محتوای اصلی - این بخش قابل تنظیم است -->
+            <div class="account-details">
+                <h3 class="section-title">اطلاعات شخصی</h3>
+
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">نام کامل</div>
+                        <div class="info-value">مهدیس</div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-label">ایمیل</div>
+                        <div class="info-value">mahdis@gmail.com</div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-label">شماره تلفن</div>
+                        <div class="info-value">۰۹۱۲XXX۶۷۸۹</div>
+                    </div>
+
+
+
+                <a href="YOUR_LINK_HERE" class="btn btn-primary">ویرایش اطلاعات</a>
+
+
+           {% render_partial 'VolixProfile.views.profile_sidebar' %}
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // تغییر بخش‌های حساب کاربری
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
+{% endblock %}

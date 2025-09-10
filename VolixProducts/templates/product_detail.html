@@ -423,12 +423,7 @@
         <div class="product-detail-content">
             <div class="product-gallery">
                 <img id="main-image" src="{{product.image.url}}" alt="گوشی سامسونگ S25 اولترا" class="main-product-image">
-{#                <div class="product-thumbnails">#}
-{#                    <img src="{% static 'image/s25-2.jpg' %}" alt="Thumbnail 1" class="thumbnail active" onclick="changeImage(this)">#}
-{#                    <img src="{% static 'image/s25-3.jpg' %}" alt="Thumbnail 2" class="thumbnail" onclick="changeImage(this)">#}
-{#                    <img src="{% static 'image/s25-4.jpg' %}" alt="Thumbnail 3" class="thumbnail" onclick="changeImage(this)">#}
-{#                    <img src="{% static 'image/s25-5.jpg' %}" alt="Thumbnail 4" class="thumbnail" onclick="changeImage(this)">#}
-{#                </div>#}
+
             </div>
 
             <div class="product-info">
@@ -447,22 +442,9 @@
                     {{ product.description }}
                 </p>
 
-                <div class="product-specs">
-                    <h3 class="specs-title">مشخصات فنی</h3>
-                    <ul class="specs-list">
-                        <li><strong>برند:</strong> سامسونگ</li>
-                        <li><strong>مدل:</strong> Galaxy S25 Ultra</li>
-                        <li><strong>حافظه داخلی:</strong> 256 گیگابایت</li>
-                        <li><strong>حافظه RAM:</strong> 12 گیگابایت</li>
-                        <li><strong>اندازه نمایشگر:</strong> 6.8 اینچ</li>
-                        <li><strong>رزولوشن عکس:</strong> 200 مگاپیکسل</li>
-                        <li><strong>سیستم عامل:</strong> Android 15</li>
-                        <li><strong>ظرفیت باتری:</strong> 5000 میلی آمپر</li>
-                    </ul>
-                </div>
 
                 <div class="cart">
-                    <form action="add_new_order" method="post">
+                    <form action="{% url 'VolixOrder:add_new_order' %}" method="post">
                         {% csrf_token %}
                       <div class="qty">
                         {{ new_order_form.product_id }}
@@ -486,13 +468,16 @@
               <div class="product-actions">
                 <div class="product-meta">
                     <div class="meta-item">
-                        <strong>دسته بندی:</strong> گوشی موبایل
+                        <strong>دسته بندی:</strong>{{ product.title}}
                     </div>
                     <div class="meta-item">
                         <strong>موجودی:</strong> موجود در انبار
                     </div>
                     <div class="meta-item">
                         <strong>کد محصول:</strong> SM-S925UZKE
+                    </div>
+                    <div class="meta-item">
+                        <strong> کد تخفیف:</strong> 1258
                     </div>
                 </div>
             </div>

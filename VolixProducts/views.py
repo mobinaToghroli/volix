@@ -45,6 +45,15 @@ def product_detail(request, *args, **kwargs):
     title = kwargs['title']
     new_order_form = UserNewOrderForm(request.POST or None, initial=({'product_id':product_id}))
 
+    # Debug: Print form data
+    print(f"Product detail - Product ID: {product_id}")
+    print(f"Product detail - Request method: {request.method}")
+    if request.method == 'POST':
+        print(f"Product detail - POST data: {request.POST}")
+        print(f"Product detail - Form is valid: {new_order_form.is_valid()}")
+        if not new_order_form.is_valid():
+            print(f"Product detail - Form errors: {new_order_form.errors}")
+
     product = Product.objects.get_product_by_id(product_id)
     if product is None:
         raise Http404('محصول یافت نشد')

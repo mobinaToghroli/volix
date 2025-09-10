@@ -36,6 +36,7 @@ urlpatterns = [
     path('logout', log_out, name='logout'),
     path('', include('VolixProducts.urls' , namespace='productss') , ),
     path('', include('VolixOrder.urls' , namespace='order') , ),
+    path('', include('VolixProfile.urls' , namespace='profile') , ),
     path('products_categoris_partial', products_categories_partial, name='products_categories_partial'),
 
 

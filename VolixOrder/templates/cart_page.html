@@ -338,9 +338,11 @@
                         </td>
                         <td class="price">{{ detail.product.price }} تومان</td>
                         <td class="price">{{ detail.product_sum_in_cart}} تومان</td>
-                        <td>
-                            <button class="action-btn remove-btn">حذف</button>
-                        </td>
+                         <td>
+                            <div class="pull-right">
+                                <a href="/remove_cart_item/{{ detail.id }}" class="btn btn-danger">حذف از سبد خرید</a>
+                            </div>
+                         </td>
                     </tr>
 
                   {% endfor %}
@@ -352,17 +354,28 @@
             {% endif %}
         </div>
 
+        {% if order and details %}
         <div class="cart-summary">
             <h3 class="summary-title">خلاصه سفارش</h3>
 
             <div class="summary-row">
+                <span>تعداد محصولات مختلف:</span>
+                <span>{{ details.count }} نوع</span>
+            </div>
+
+            <div class="summary-row">
+                <span>تعداد کل اقلام:</span>
+                <span>{{ order.get_total_items_count }} عدد</span>
+            </div>
+
+            <div class="summary-row">
                 <span>جمع کل سبد خرید:</span>
-                <span>۱۱۵,۹۹۰,۰۰۰ تومان</span>
+                <span>{{ order.get_total_price|floatformat:0 }} تومان</span>
             </div>
 
             <div class="summary-row">
                 <span>تخفیف:</span>
-                <span>۵,۰۰۰,۰۰۰ تومان</span>
+                <span>۰ تومان</span>
             </div>
 
             <div class="summary-row">
@@ -372,9 +385,10 @@
 
             <div class="summary-row summary-total">
                 <span>مبلغ قابل پرداخت:</span>
-                <span>۱۱۰,۹۹۰,۰۰۰ تومان</span>
+                <span>{{ order.get_total_price|floatformat:0 }} تومان</span>
             </div>
         </div>
+        {% endif %}
 
 
     <!-- در قسمت پایین سبد خرید این کد رو اضافه کن -->

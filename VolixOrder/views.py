@@ -1,3 +1,4 @@
+from django.http.response import Http404
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
@@ -16,18 +17,29 @@ def add_new_order(request):
     new_order_form = UserNewOrderForm(request.POST or None)
 
     if new_order_form.is_valid():
+        print(f"Add order - Form is valid for user: {request.user.username}")
+        
         order = Order.objects.filter(user_id=request.user.id, paid=False).first()
         if order is None:
             order = Order.objects.create(user_id=request.user.id, paid=False)
+            print(f"Add order - Created new order: {order.id}")
 
         product_id = new_order_form.cleaned_data.get('product_id')
         product = Product.objects.get_product_by_id(product_id)
         count = new_order_form.cleaned_data.get('count')
         if count < 0:
             count = 1
-        order.orderdetail_set.create(product_id=product.id, count=count, price=product.price)
-
-    return redirect(f'/productss/{product.id}/{product.title.replace(" ", "-")}')
+            
+        print(f"Add order - Product: {product.title}, Count: {count}, Price: {product.price}")
+        
+        order_detail = order.orderdetail_set.create(product_id=product.id, count=count, price=product.price)
+        print(f"Add order - Created order detail: {order_detail.id}")
+        
+        return redirect(f'/productss/{product.id}/{product.title.replace(" ", "-")}')
+    else:
+        print(f"Add order - Form is invalid: {new_order_form.errors}")
+        # If form is invalid, redirect back to products list
+        return redirect('/productss')
 
 
 @login_required(login_url='/login')
@@ -37,12 +49,32 @@ def cart(request):
         'details': None,
     }
 
+    # Debug: Print user information
+    print(f"Cart view - User ID: {request.user.id}")
+    print(f"Cart view - User: {request.user.username}")
+    
     open_order = Order.objects.filter(user_id=request.user.id, paid=False).first()
+    print(f"Cart view - Open order found: {open_order}")
+    
     if open_order is not None:
         context['order'] = open_order
-        context['details'] = open_order.orderdetail_set.all()
+        details = open_order.orderdetail_set.all()
+        context['details'] = details
+        print(f"Cart view - Order details count: {details.count()}")
+        for detail in details:
+            print(f"Cart view - Detail: {detail.product.title}, Count: {detail.count}, Price: {detail.price}")
+    else:
+        print("Cart view - No open order found")
 
     return render(request, 'cart_page.html', context)
+
+def remove_cart_item(request,*args ,**kwargs):
+    detail_id = kwargs['detail_id']
+    order_detail = OrderDetail.objects.get_queryset().get(id=detail_id)
+    if order_detail is not None:
+        order_detail.delete()
+        return redirect('/cart')
+    raise Http404()
 
 
 # ==================== PAYMENT GATEWAY ====================
