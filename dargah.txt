@@ -1,0 +1,85 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>درگاه پرداخت تستی - ZarinGate</title>
+            <meta charset="utf-8">
+            <style>
+                body {{ 
+                    font-family: Tahoma, Arial, sans-serif; 
+                    text-align: center; 
+                    margin: 0;
+                    padding: 20px;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    min-height: 100vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }}
+                .payment-container {{
+                    background: white;
+                    border-radius: 15px;
+                    padding: 30px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                    max-width: 500px;
+                    width: 100%;
+                }}
+                .logo {{
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: #667eea;
+                    margin-bottom: 20px;
+                }}
+                .amount {{
+                    font-size: 28px;
+                    color: #333;
+                    margin: 20px 0;
+                }}
+                .btn {{
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    padding: 15px 40px;
+                    border: none;
+                    border-radius: 25px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    margin: 10px;
+                    transition: all 0.3s;
+                }}
+                .btn:hover {{
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                }}
+                .btn-cancel {{
+                    background: #ff4757;
+                }}
+                .test-note {{
+                    margin-top: 20px;
+                    padding: 15px;
+                    background: #f8f9fa;
+                    border-radius: 10px;
+                    border: 1px dashed #ddd;
+                }}
+            </style>
+        </head>
+        <body>
+            <div class="payment-container">
+                <div class="logo">ZarinGate Test</div>
+                <h2>درگاه پرداخت تستی</h2>
+                
+                <div class="amount">مبلغ: 10,000 تومان</div>
+                <p>برای: پرداخت سبد خرید</p>
+                
+                <form method="post">
+                    <button type="submit" class="btn">💳 پرداخت تستی</button>
+                </form>
+                
+                <a href="/cart/" class="btn btn-cancel">❌ لغو پرداخت</a>
+                
+                <div class="test-note">
+                    <p>🔹 این یک درگاه پرداخت تستی است</p>
+                    <p>🔹 هیچ وجهی از حساب شما کسر نمی‌شود</p>
+                    <p>🔹 برای تست عملکرد پرداخت استفاده می‌شود</p>
+                </div>
+            </div>
+        </body>
+        </html>
